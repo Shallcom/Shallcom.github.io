@@ -49,6 +49,54 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
 <style>
+  /* ==========================================
+     【新增】顶部导航栏横向排版与美化 
+     ========================================== */
+  .masthead {
+      background-color: #ffffff;
+      border-bottom: 1px solid #f0f3f5;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 15px 0;
+      position: sticky; /* 导航栏吸顶效果 */
+      top: 0;
+      z-index: 9999;
+  }
+
+  .greedy-nav .visible-links {
+      display: flex; /* 横向排列核心 */
+      justify-content: center; /* 居中对齐 */
+      align-items: center;
+      list-style-type: none; /* 去除圆点 */
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap; /* 适配窄屏幕自动换行 */
+  }
+
+  .greedy-nav .masthead__menu-item {
+      margin: 0 10px; /* 菜单项之间的间距 */
+  }
+
+  .greedy-nav .masthead__menu-item a {
+      color: #34495e;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+  }
+
+  /* 导航栏鼠标悬浮动画：浅灰背景 + 文字变蓝 */
+  .greedy-nav .masthead__menu-item a:hover {
+      background-color: #f8f9fa;
+      color: #3498db;
+  }
+
+  /* 隐藏可能由于缺乏原生样式导致出现的折叠按钮 */
+  .greedy-nav button {
+      display: none !important;
+  }
+
   /* 1. 页面主体内容和排版优化 */
   .page__content {
       font-size: 16px;
@@ -151,29 +199,6 @@
   .badge-gray { background-color: #95a5a6; } /* 灰 */
   .badge-purple { background-color: #9b59b6; } /* 紫 */
 
-  /* 6. 快捷按钮 (Buttons) */
-  .btn-link {
-      display: inline-block;
-      margin-top: 12px;
-      margin-right: 10px;
-      padding: 4px 12px;
-      font-size: 0.85em;
-      font-weight: 500;
-      color: #3498db;
-      background-color: transparent;
-      border: 1px solid #3498db;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-  }
-  .btn-link:hover {
-      background-color: #3498db;
-      color: #fff;
-      text-decoration: none;
-  }
-  .btn-link i {
-      margin-right: 4px;
-  }
 </style>
 </head>
 
@@ -244,47 +269,36 @@
 <ul>
   <li>
     Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. An efficient deep learning framework for mixed-type wafer map defect pattern recognition[J]. <em>AIP Advances</em>, 2024, 14(4). <span class="badge badge-sci">SCI</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="btn-link"><i class="fas fa-code"></i> Code</a>
   </li>
   <li>
     Jianming Zhang, Haitao Huang, <strong>Xiaokang Jin</strong>, et al. Siamese visual tracking based on criss-cross attention and improved head network[J]. <em>Multimedia Tools and Applications</em>, 2024, 83(1): 1589-1615. <span class="badge badge-ccf">CCF C</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. Attention-based encoder–decoder network for depth estimation from color-coded light fields[J]. <em>AIP Advances</em>, 2023, 13(3). <span class="badge badge-sci">SCI</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, Jin Wang, Jin Zhang. Real-time traffic sign detection based on multiscale attention and spatial information aggregator[J]. <em>Journal of Real-Time Image Processing</em>, 2022, vol. 19, no. 6, pp. 1155–1167. <span class="badge badge-sci">SCI</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     Zhang Jianming, <strong>Jin Xiaokang</strong>, Sun Juan, Wang Jin, Arun Kumar Sangaiah. Spatial and semantic convolutional features for robust visual object tracking[J]. <em>Multimedia Tools and Applications</em>, 2020, vol. 79, no. 21-22, pp. 15095-15115. <span class="badge badge-ccf">CCF C</span><span class="badge badge-hot">ESI Highly Cited</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="btn-link"><i class="fas fa-code"></i> Code</a>
   </li>
   <li>
     Zhang Jianming, <strong>Jin Xiaokang</strong>, Sun Juan, Wang Jin, Li Keqin. Dual model learning combined with multiple feature selection for accurate visual tracking[J]. <em>IEEE Access</em>, 2019, vol. 7, pp. 43956-43969. <span class="badge badge-sci">SCI</span><span class="badge badge-hot">ESI Highly Cited</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     张建明, <strong>金晓康</strong>, 吴宏林, 伍悠. 基于多模型的实时压缩跟踪算法[J]. <em>电子与信息学报</em>, 2018, 40(10): 2373-2380. <span class="badge badge-ei">EI</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     Zhang Jianming, <strong>Jin Xiaokang</strong>, Liu Yukai, Arun Kumar Sangaiah, Wang Jin. Small sample face recognition algorithm based on novel Siamese network[J]. <em>Journal of Information Processing Systems</em>, 2018, vol. 14, no. 6, pp. 1464-1479. <span class="badge badge-ei">EI</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     Zhang Jianming, Wu You, <strong>Jin Xiaokang</strong>, et al. A fast object tracker based on integrated multiple features and dynamic learning rate[J]. <em>Mathematical Problems in Engineering</em>, 2018, Article ID 5986062. <span class="badge badge-ei">EI</span><span class="badge badge-gray">WOS</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     Zhang Jianming, Huang Manting, <strong>Jin Xiaokang</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2[J]. <em>Algorithms</em>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
   <li>
     刘宇凯, <strong>金晓康</strong>, 张建明, 廖婷婷. 基于局部结构的多尺度协作表示人脸识别算法[J]. <em>计算机工程与应用</em>, 2018, 54(17): 151-157. <span class="badge badge-purple">CSCD</span>
-    <br><a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> PDF</a>
   </li>
 </ul>
 
