@@ -55,7 +55,7 @@
       color: #0ea5e9;
   }
 
-  /* 核心布局：扩展至 1250px */
+  /* 核心布局：扩展至 1350px */
   .page-container {
       max-width: 1350px; 
       margin: 50px auto;
@@ -70,6 +70,14 @@
       flex: 0 0 280px;
       position: sticky;
       top: 100px;
+  }
+  .sidebar h1 {
+      font-size: 2em;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
   }
   .sidebar .side-title {
       font-size: 2em;
@@ -160,10 +168,10 @@
       font-weight: 700;
   }
 
-  /* 科研成果纯列表样式 */
+  /* 无序列表样式：恢复圆点并增加缩进 */
   .main-content ul {
-      list-style-type: none;
-      padding-left: 0;
+      list-style-type: disc;
+      padding-left: 25px;
       margin-bottom: 40px;
   }
   .main-content ul li {
@@ -183,7 +191,7 @@
   /* 徽章样式 */
   .badge {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 1px 8px;
       border-radius: 4px;
       font-size: 0.72em;
       font-weight: 700;
@@ -250,6 +258,7 @@
     </div>
 
     <div class="main-content">
+      <h1 class="section-title" id="about-me"><i class="fas fa-id-card"></i>About Me</h1>
       <div class="intro-text">
         <p>I am currently pursuing my PhD degree in <strong>Computer Science and Technology</strong> from <strong>Zhejiang Normal University</strong>, under the supervision of <a href="https://scholar.google.com/citations?user=KO3MIkQAAAAJ&hl=en">Prof. Jia Zhu</a>. Previously, I obtained my B.S. and M.S. degrees in <strong>Computer Science and Technology</strong> from <strong>Changsha University of Science and Technology</strong>, advised by <a href="https://scholar.google.com/citations?user=bwrCnUUAAAAJ">Prof. Jianming Zhang</a>.</p>
         <p>I am also currently serving as a Lecturer at <strong>Jinhua Advanced Research Institute</strong>. My research interests focus on <strong>Computer Vision</strong> and <strong>Multimodal AI</strong>, with a particular emphasis on <strong>Educational Video Understanding, Retrieval-Augmented Generation (RAG), Object Tracking</strong>, and <strong>Knowledge Graphs</strong>.</p>
@@ -259,24 +268,24 @@
       
       <h2>Conference Papers</h2>
       <ul>
-        <li>jingjiang liu, Jia Zhu, Hanghui Guo, <strong>Xiaokang Jin</strong>, et al. KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning. <span class="journal-name">ACL Main</span>. <span class="badge badge-ccf">CCF A</span></li>
-        <li><strong>Xiaokang Jin</strong>, Jia Zhu, jingjiang liu, Yabing Shi, et al. PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding. <span class="journal-name">ACL Findings</span>. <span class="badge badge-ccf">CCF A</span></li>
+        <li>jingjiang liu, Jia Zhu, Hanghui Guo, Weijie Shi, Yue Cui, <strong>Xiaokang Jin</strong>, Yilin Wang, Qingyu Niu, Jiawei Shen, Guoqing Ma, Yidan Liang, Shimin Di, Jiajie Xu. KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning. <span class="journal-name">ACL Main</span>. <span class="badge badge-ccf">CCF A</span></li>
+        <li><strong>Xiaokang Jin</strong>, Jia Zhu, jingjiang liu, Yabing Shi, Jueqi Guan, Hao Chen, Pasquale De Meo. PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding. <span class="journal-name">ACL Findings</span>. <span class="badge badge-ccf">CCF A</span></li>
       </ul>
 
       <h2>Journal Papers</h2>
       <ul>
-        <li>Jianming Zhang, Jiangxing Dai, <strong>Xiaokang Jin*</strong>, Nai Ke. Learning Distortion-Aware Correlation Filters with Target Mask for UAV Tracking. <span class="journal-name">The European Journal on Artificial Intelligence</span>. 2026; 39(2): 504-521. <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, Jiangxing Dai, <strong>Xiaokang Jin*</strong>, Nai Ke. Learning Distortion-Aware Correlation Filters with Target Mask for UAV Tracking. <span class="journal-name">The European Journal on Artificial Intelligence</span>. 2026; 39(2): 504-521. <span class="badge badge-purple">Corresponding Author</span></li>
         <li><strong>Xiaokang Jin</strong>, Benben Huang, Hao Sheng, Yao Wu. An anchor-free Siamese tracker with multi-attention and corner detection mechanism. <span class="journal-name">IEICE Transactions on Information and Systems</span>. 2025, E108.D(4), 349-359. <span class="badge badge-sci">SCI</span></li>
         <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. An efficient deep learning framework for mixed-type wafer map defect pattern recognition. <span class="journal-name">AIP Advances</span>, 2024, 14(4). <span class="badge badge-sci">SCI</span></li>
         <li>Jianming Zhang, Haitao Huang, <strong>Xiaokang Jin</strong>, et al. Siamese visual tracking based on criss-cross attention and improved head network. <span class="journal-name">Multimedia Tools and Applications</span>, 2024, 83(1): 1589-1615. <span class="badge badge-ccf">CCF C</span></li>
         <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. Attention-based encoder–decoder network for depth estimation from color-coded light fields. <span class="journal-name">AIP Advances</span>, 2023, 13(3). <span class="badge badge-sci">SCI</span></li>
-        <li>Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, et al. Real-time traffic sign detection based on multiscale attention and spatial information aggregator. <span class="journal-name">Journal of Real-Time Image Processing</span>, 2022, vol. 19, no. 6, pp. 1155–1167. <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, et al. Real-time traffic sign detection based on multiscale attention and spatial information aggregator. <span class="journal-name">Journal of Real-Time Image Processing</span>, 2022, vol. 19, no. 6, pp. 1155–1167. DOI: 10.1007/s11554-022-01252-w. <span class="badge badge-sci">SCI</span></li>
         <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, Jin Wang, Arun Kumar Sangaiah. Spatial and semantic convolutional features for robust visual object tracking. <span class="journal-name">Multimedia Tools and Applications</span>, 2020, vol. 79, no. 21-22, pp. 15095-15115. <span class="badge badge-ccf">CCF C</span></li>
         <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, Jin Wang, Keqin Li. Dual model learning combined with multiple feature selection for accurate visual tracking. <span class="journal-name">IEEE Access</span>, 2019, vol. 7, pp. 43956-43969. <span class="badge badge-sci">SCI</span></li>
         <li>张建明, <strong>金晓康</strong>, 吴宏林, 伍悠. 基于多模型的实时压缩跟踪算法. <span class="journal-name">电子与信息学报</span>, 2018, 40(10): 2373-2380. <span class="badge badge-ei">EI</span></li>
         <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Yukai Liu, Arun Kumar Sangaiah, Wang Jin. Small sample face recognition algorithm based on novel Siamese network. <span class="journal-name">Journal of Information Processing Systems</span>, 2018, vol. 14, no. 6, pp. 1464-1479. <span class="badge badge-ei">EI</span></li>
         <li>Jianming Zhang, You Wu, <strong>Xiaokang Jin</strong>, et al. A fast object tracker based on integrated multiple features and dynamic learning rate. <span class="journal-name">Mathematical Problems in Engineering</span>, 2018, Article ID 5986062. <span class="badge badge-sci">SCI</span></li>
-        <li>Zhang Jianming, Huang Manting, <strong>金晓康</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span></li>
+        <li>Zhang Jianming, Huang Manting, <strong>Xiaokang Jin</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span></li>
         <li>刘宇凯, <strong>金晓康</strong>, 张建明, 廖婷婷. 基于局部结构的多尺度协作表示人脸识别算法. <span class="journal-name">计算机工程与应用</span>. 2018, 54(17): 151-157. <span class="badge badge-purple">CSCD</span></li>
         <li><strong>金晓康</strong>, 吴瑶, 施莹娟, 等. 基于YOLO框架的实时交通标志识别算法研究与系统实现. <span class="journal-name">软件</span>, 2023, 44(01): 20-23.</li>
       </ul>
@@ -285,10 +294,10 @@
       <h2>Patents</h2>
       <ul>
         <li><strong>金晓康</strong>, 姚泽瑾等. 一种目标跟踪方法、装置、设备及存储介质. 授权号：ZL202010481945.5. <span class="badge badge-success">已授权</span></li>
-        <li>董长春, 曹楠, 韩煜, <strong>金晓康</strong>. 一种用于光电雪崩二极管C-V曲线的测量装置及测量方法. 公开号：CN113589129B. <span class="badge badge-success">已授权</span></li>
         <li>张建明, <strong>金晓康</strong>, 李旭东, 陆朝铨. 一种基于多级特征的双学习模型目标跟踪方法. 授权号: ZL201811405327.1. <span class="badge badge-success">已授权</span></li>
+        <li>董长春, 曹楠, 韩煜, <strong>金晓康</strong>. 一种用于光电雪崩二极管C-V曲线的测量装置及测量方法. 公开号：CN113589129B. <span class="badge badge-success">已授权</span></li>
         <li><strong>金晓康</strong>. 一种基于注意力机制和角点检测的高效孪生跟踪方法. 申请号: 202311470810.9. <span class="badge badge-gray">等待实审</span></li>
-        <li><strong>金晓康</strong>. 一种基于多线程并行的GPU快速目标跟踪方法. 申请号：202310510664.1. <span class="badge badge-gray">等待实审</span></li> 
+        <li><strong>金晓康</strong>. 一种基于多线程并行的GPU快速目标跟踪方法. 申请号：202310510664.1. <span class="badge badge-gray">等待实审</span></li>
       </ul>
 
       <h2>Software Copyrights</h2>
@@ -331,7 +340,7 @@
         <li>基于相关滤波和深度学习的单目标跟踪技术研究. 湖南省研究生科研创新项目. <span class="badge badge-success">参与/结题</span></li>
         <li>基于多核相关滤波器的判别可靠性学习跟踪研究. 湖南省研究生科研创新项目. <span class="badge badge-success">参与/结题</span></li>
         <li>云计算和大数据教育软件咨询服务. 广东轩辕网络科技技术服务. <span class="badge badge-success">参与/结题</span></li>
-        
+        <li>基于产教融合的智慧就业指导体系建设的研究. 金华市教育科学规划研究课题. <span class="badge badge-info">在研</span></li>
       </ul>
       <h2>Teaching Reform Projects</h2>
       <ul>
