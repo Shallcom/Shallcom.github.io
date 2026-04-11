@@ -1,330 +1,326 @@
-\<\!doctype html\>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Xiaokang Jin - Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-\<html lang="en" class="no-js"\>
-\<head\>
-\<meta charset="utf-8"\>
-\<title\>Xiaokang Jin - Homepage\</title\>
-\<meta name="viewport" content="width=device-width, initial-scale=1.0"\>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-\<link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800\&family=Lora:ital,wght@0,400;0,600;1,400\&display=swap](https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40400%3B700%3B800%26family%3DLora:ital,wght%400,400%3B0,600%3B1,400%26display%3Dswap)" rel="stylesheet"\>
+<style>
+  /* 全局基础设置 */
+  body {
+      font-family: 'Lora', Georgia, "Times New Roman", serif;
+      color: #1e293b;
+      line-height: 1.8;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+  }
 
-\<link rel="stylesheet" href="assets/css/main.css"\>
-\<link rel="stylesheet" href="[https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css](https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css)"\>
-\<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)"\>
+  h1, h2, h3, .masthead, .sidebar .affiliations, .badge, .title-status {
+      font-family: 'Inter', -apple-system, sans-serif;
+  }
 
-\<style\>
-/\* 全局基础设置：采用学术论文常用的衬线体 \*/
-body {
-font-family: 'Lora', Georgia, "Times New Roman", serif;
-color: \#1e293b;
-line-height: 1.75;
-background-color: \#ffffff;
-margin: 0;
-padding: 0;
-}
+  /* 顶部导航栏 */
+  .masthead {
+      border-bottom: 1px solid #f1f5f9;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.98);
+      z-index: 9999;
+  }
+  .greedy-nav .visible-links {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+  .greedy-nav .masthead__menu-item {
+      margin: 0 20px;
+  }
+  .greedy-nav .masthead__menu-item a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.3s ease;
+  }
+  .greedy-nav .masthead__menu-item a:hover {
+      color: #0ea5e9;
+  }
 
-/\* 标题使用现代无衬线体，增强对比 \*/
-h1, h2, h3, .masthead, .sidebar .affiliations, .badge {
-font-family: 'Inter', -apple-system, sans-serif;
-}
+  /* 核心布局：扩展至 1250px */
+  .page-container {
+      max-width: 1250px; 
+      margin: 50px auto;
+      padding: 0 40px;
+      display: flex;
+      gap: 70px;
+      align-items: flex-start;
+  }
 
-/\* 顶部导航栏 \*/
-.masthead {
-border-bottom: 1px solid \#f1f5f9;
-padding: 15px 0;
-position: sticky;
-top: 0;
-background-color: rgba(255, 255, 255, 0.98);
-z-index: 9999;
-}
-.greedy-nav .visible-links {
-display: flex;
-justify-content: center;
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-.greedy-nav .masthead\_\_menu-item {
-margin: 0 20px;
-}
-.greedy-nav .masthead\_\_menu-item a {
-color: \#475569;
-text-decoration: none;
-font-weight: 600;
-font-size: 15px;
-transition: color 0.3s ease;
-}
-.greedy-nav .masthead\_\_menu-item a:hover {
-color: \#0ea5e9;
-}
+  /* 左侧侧边栏 */
+  .sidebar {
+      flex: 0 0 280px;
+      position: sticky;
+      top: 100px;
+  }
+  .sidebar .side-title {
+      font-size: 2em;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+  }
+  .sidebar .side-title i {
+      margin-right: 12px;
+      color: #0ea5e9;
+      font-size: 0.85em;
+  }
+  .sidebar .affiliations {
+      color: #475569;
+      font-size: 1.05em;
+      margin-bottom: 20px;
+      line-height: 1.5;
+  }
+  .sidebar .title-status {
+      color: #64748b;
+      font-size: 0.9em;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+  }
+  .sidebar ul {
+      list-style: none;
+      padding: 0;
+  }
+  .sidebar ul li {
+      margin-bottom: 12px;
+      font-size: 0.95em;
+      display: flex;
+      align-items: center;
+  }
+  .sidebar ul li i {
+      width: 24px;
+      margin-right: 12px;
+      color: #64748b;
+      text-align: center;
+  }
+  .sidebar ul li a {
+      color: #475569;
+      text-decoration: none;
+  }
+  .sidebar ul li a:hover {
+      color: #0ea5e9;
+      text-decoration: underline;
+  }
 
-/\* ==========================================
-核心布局：宽度扩展至 1250px
-\========================================== */
-.page-container {
-max-width: 1250px;
-margin: 50px auto;
-padding: 0 40px;
-display: flex;
-gap: 80px; /* 增加两栏间距 \*/
-align-items: flex-start;
-}
+  /* 右侧主内容区 */
+  .main-content {
+      flex: 1;
+      min-width: 0;
+  }
 
-/\* 左侧侧边栏 \*/
-.sidebar {
-flex: 0 0 270px;
-position: sticky;
-top: 100px;
-}
+  /* 简介区域 */
+  .intro-text {
+      font-size: 1.15em;
+      color: #334155;
+      margin-bottom: 50px;
+      text-align: justify;
+  }
 
-/\* 标题与可视化图标样式 \*/
-.sidebar .side-title {
-font-size: 1.9em;
-color: \#0f172a;
-margin: 0 0 10px 0;
-font-weight: 800;
-letter-spacing: -0.02em;
-display: flex;
-align-items: center;
-}
-.sidebar .side-title i {
-margin-right: 12px;
-color: \#0ea5e9;
-font-size: 0.9em;
-}
+  /* 学术标题样式 + 图标对齐 */
+  .section-title {
+      font-size: 1.8em;
+      color: #0f172a;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 10px;
+      margin: 60px 0 25px 0;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+  }
+  .section-title i {
+      margin-right: 15px;
+      color: #334155;
+      font-size: 0.9em;
+  }
 
-.sidebar .affiliations {
-color: \#475569;
-font-size: 1em;
-margin-bottom: 20px;
-line-height: 1.5;
-}
-.sidebar .title-status {
-color: \#64748b;
-font-size: 0.95em;
-margin-bottom: 30px;
-text-transform: uppercase;
-letter-spacing: 0.05em;
-}
-.sidebar ul {
-list-style: none;
-padding: 0;
-}
-.sidebar ul li {
-margin-bottom: 12px;
-font-size: 0.92em;
-display: flex;
-align-items: center;
-}
-.sidebar ul li i {
-width: 24px;
-margin-right: 12px;
-color: \#64748b;
-text-align: center;
-font-size: 1.1em;
-}
-.sidebar ul li a {
-color: \#475569;
-text-decoration: none;
-}
-.sidebar ul li a:hover {
-color: \#0ea5e9;
-text-decoration: underline;
-}
+  .main-content h2 {
+      font-size: 1.35em;
+      color: #1e293b;
+      margin: 40px 0 18px 0;
+      font-weight: 700;
+  }
 
-/\* 右侧主内容区 \*/
-.main-content {
-flex: 1;
-min-width: 0;
-}
+  /* 科研成果纯列表样式 */
+  .main-content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 40px;
+  }
+  .main-content ul li {
+      margin-bottom: 15px;
+      line-height: 1.7;
+      font-size: 1.05em;
+      color: #334155;
+  }
 
-.intro-text {
-font-size: 1.1em;
-color: \#334155;
-margin-bottom: 50px;
-text-align: justify;
-}
+  /* 期刊/会议名高亮 */
+  .journal-name {
+      font-weight: 600;
+      color: #0369a1;
+      font-style: italic;
+  }
 
-/\* 学术风格标题 \*/
-.section-title {
-font-size: 1.7em;
-color: \#0f172a;
-border-bottom: 2px solid \#f1f5f9;
-padding-bottom: 10px;
-margin: 50px 0 25px 0;
-font-weight: 800;
-}
-.main-content h2 {
-font-size: 1.3em;
-color: \#1e293b;
-margin: 35px 0 15px 0;
-font-weight: 700;
-}
+  /* 徽章样式 */
+  .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72em;
+      font-weight: 700;
+      color: #fff;
+      margin-left: 8px;
+      vertical-align: middle;
+      text-transform: uppercase;
+  }
+  .badge-sci { background-color: #10b981; } 
+  .badge-ccf { background-color: #3b82f6; } 
+  .badge-ei  { background-color: #f59e0b; } 
+  .badge-gray { background-color: #94a3b8; } 
+  .badge-purple { background-color: #8b5cf6; } 
+  .badge-success { background-color: #059669; } 
+  .badge-info { background-color: #0ea5e9; } 
 
-/\* 科研成果列表样式：极致清爽 \*/
-.main-content ul {
-list-style-type: none;
-padding-left: 0;
-margin-bottom: 40px;
-}
-.main-content ul li {
-margin-bottom: 16px;
-line-height: 1.6;
-font-size: 1.02em;
-color: \#334155;
-padding: 0;
-}
+  @media (max-width: 950px) {
+      .page-container {
+          flex-direction: column;
+          padding: 0 20px;
+      }
+      .sidebar {
+          width: 100%;
+          position: static;
+          border-bottom: 1px solid #f1f5f9;
+          padding-bottom: 40px;
+      }
+  }
+</style>
+</head>
 
-/\* 期刊/会议名高亮：深蓝色倾斜 \*/
-.journal-name {
-font-weight: 600;
-color: \#0369a1;
-font-style: italic;
-}
-
-/\* 徽章样式：精致扁平化 \*/
-.badge {
-display: inline-block;
-padding: 1px 8px;
-border-radius: 4px;
-font-size: 0.72em;
-font-weight: 700;
-color: \#fff;
-margin-left: 8px;
-vertical-align: middle;
-text-transform: uppercase;
-}
-.badge-sci { background-color: \#10b981; }
-.badge-ccf { background-color: \#3b82f6; }
-.badge-hot { background-color: \#ef4444; }
-.badge-ei  { background-color: \#f59e0b; }
-.badge-gray { background-color: \#94a3b8; }
-.badge-purple { background-color: \#8b5cf6; }
-.badge-success { background-color: \#059669; }
-.badge-info { background-color: \#0ea5e9; }
-
-@media (max-width: 900px) {
-.page-container {
-flex-direction: column;
-padding: 0 20px;
-}
-.sidebar {
-width: 100%;
-position: static;
-border-bottom: 1px solid \#f1f5f9;
-padding-bottom: 30px;
-}
-}
-\</style\>
-
-\</head\>
-
-\<body\>
-\<div class="masthead"\>
-\<nav class="greedy-nav"\>
-\<ul class="visible-links"\>
-\<li class="masthead\_\_menu-item"\>\<a href="\#about-me"\>About Me\</a\>\</li\>
-\<li class="masthead\_\_menu-item"\>\<a href="\#publications"\>Publications\</a\>\</li\>
-\<li class="masthead\_\_menu-item"\>\<a href="\#patents"\>Patents\</a\>\</li\>
-\<li class="masthead\_\_menu-item"\>\<a href="\#awards"\>Awards\</a\>\</li\>
-\<li class="masthead\_\_menu-item"\>\<a href="\#projects"\>Projects\</a\>\</li\>
-\</ul\>
-\</nav\>
-\</div\>
-
-\<div class="page-container"\>
-\<div class="sidebar"\>
-\<h1 class="side-title"\>\<i class="fa-solid fa-user"\>\</i\>Xiaokang Jin\</h1\>
-\<div class="affiliations"\>
-Zhejiang Normal University<br>
-Jinhua Advanced Research Institute
-\</div\>
-\<div class="title-status"\>PhD Student & Lecturer\</div\>
-\<ul\>
-\<li\>\<i class="fas fa-map-marker-alt"\>\</i\> Jinhua, China\</li\>
-\<li\>\<i class="fas fa-envelope"\>\</i\> \<a href="mailto:xiaokangjin@zjnu.edu.cn"\>xiaokangjin@zjnu.edu.cn\</a\>\</li\>
-\<li\>\<i class="fas fa-envelope" style="visibility: hidden;"\>\</i\> \<a href="mailto:jxk726@163.com"\>jxk726@163.com\</a\>\</li\>
-\<li\>\<i class="ai ai-researchgate"\>\</i\> \<a href="[https://www.researchgate.net/profile/Xiaokang-Jin-2](https://www.researchgate.net/profile/Xiaokang-Jin-2)"\>ResearchGate\</a\>\</li\>
-\<li\>\<i class="ai ai-dblp"\>\</i\> \<a href="[https://dblp.org/pid/212/2839.html](https://dblp.org/pid/212/2839.html)"\>DBLP\</a\>\</li\>
-\<li\>\<i class="fab fa-github"\>\</i\> \<a href="[https://github.com/shallcom](https://github.com/shallcom)"\>Github\</a\>\</li\>
-\<li\>\<i class="ai ai-google-scholar"\>\</i\> \<a href="[https://scholar.google.com/citations?user=4qHz88kAAAAJ\&hl=en](https://scholar.google.com/citations?user=4qHz88kAAAAJ&hl=en)"\>Google Scholar\</a\>\</li\>
-\<li\>\<i class="ai ai-orcid"\>\</i\> \<a href="[https://orcid.org/0000-0002-9563-8888](https://orcid.org/0000-0002-9563-8888)"\>ORCID\</a\>\</li\>
-\</ul\>
-\</div\>
-
-```
-<div class="main-content">
-  <div class="intro-text" id="about-me">
-    <p>I am currently pursuing my PhD degree in <strong>Computer Science and Technology</strong> from <strong>Zhejiang Normal University</strong>, under the supervision of <a href="[https://scholar.google.com/citations?user=KO3MIkQAAAAJ&hl=en](https://scholar.google.com/citations?user=KO3MIkQAAAAJ&hl=en)">Prof. Jia Zhu</a>. Previously, I obtained my B.S. and M.S. degrees in <strong>Computer Science and Technology</strong> from <strong>Changsha University of Science and Technology</strong>, advised by <a href="[https://scholar.google.com/citations?user=bwrCnUUAAAAJ](https://scholar.google.com/citations?user=bwrCnUUAAAAJ)">Prof. Jianming Zhang</a>.</p>
-    <p>I am also currently serving as a Lecturer at <strong>Jinhua Advanced Research Institute</strong>. My research interests focus on <strong>Computer Vision</strong> and <strong>Multimodal AI</strong>, with a particular emphasis on <strong>Educational Video Understanding, Retrieval-Augmented Generation (RAG), Object Tracking</strong>, and <strong>Knowledge Graphs</strong>.</p>
+<body>
+  <div class="masthead">
+    <nav class="greedy-nav">
+      <ul class="visible-links">
+        <li class="masthead__menu-item"><a href="#about-me">About Me</a></li>
+        <li class="masthead__menu-item"><a href="#publications">Publications</a></li>
+        <li class="masthead__menu-item"><a href="#patents">Patents</a></li>
+        <li class="masthead__menu-item"><a href="#awards">Awards</a></li>
+        <li class="masthead__menu-item"><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
   </div>
 
-  <h1 class="section-title" id="publications">Publications</h1>
-  
-  <h2>Conference Papers</h2>
-  <ul>
-    <li>jingjiang liu, Jia Zhu, Hanghui Guo, Weijie Shi, Yue Cui, <strong>Xiaokang Jin</strong>, et al. KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning. <span class="journal-name">ACL Main</span>.</li>
-    <li><strong>Xiaokang Jin</strong>, Jia Zhu, jingjiang liu, Yabing Shi, et al. PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding. <span class="journal-name">ACL Findings</span>.</li>
-  </ul>
+  <div class="page-container">
+    <div class="sidebar">
+      <h1 class="side-title"><i class="fas fa-user-circle"></i>Xiaokang Jin</h1>
+      <div class="affiliations">
+        Zhejiang Normal University<br>
+        Jinhua Advanced Research Institute
+      </div>
+      <div class="title-status">PhD Student & Lecturer</div>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Jinhua, China</li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:xiaokangjin@zjnu.edu.cn">xiaokangjin@zjnu.edu.cn</a></li>
+        <li><i class="fas fa-envelope" style="visibility: hidden;"></i> <a href="mailto:jxk726@163.com">jxk726@163.com</a></li>
+        <li><i class="ai ai-researchgate"></i> <a href="https://www.researchgate.net/profile/Xiaokang-Jin-2">ResearchGate</a></li>
+        <li><i class="ai ai-dblp"></i> <a href="https://dblp.org/pid/212/2839.html">DBLP</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/shallcom">Github</a></li>
+        <li><i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=4qHz88kAAAAJ&hl=en">Google Scholar</a></li>
+        <li><i class="ai ai-orcid"></i> <a href="https://orcid.org/0000-0002-9563-8888">ORCID</a></li>
+      </ul>
+    </div>
 
-  <h2>Journal Papers</h2>
-  <ul>
-    <li>Jianming Zhang, Jiangxing Dai, <strong>Xiaokang Jin*</strong>, Nai Ke. Learning Distortion-Aware Correlation Filters with Target Mask for UAV Tracking. <span class="journal-name">The European Journal on Artificial Intelligence</span>. 2026; 39(2):504-521.</li>
-    <li><strong>Xiaokang Jin</strong>, Benben Huang, Hao Sheng, Yao Wu. An anchor-free Siamese tracker with multi-attention and corner detection mechanism. <span class="journal-name">IEICE Transactions on Information and Systems</span>. 2025, E108.D(4), 349-359. <span class="badge badge-sci">SCI</span></li>
-    <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. An efficient deep learning framework for mixed-type wafer map defect pattern recognition. <span class="journal-name">AIP Advances</span>, 2024, 14(4). <span class="badge badge-sci">SCI</span></li>
-    <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. Attention-based encoder–decoder network for depth estimation from color-coded light fields. <span class="journal-name">AIP Advances</span>, 2023, 13(3). <span class="badge badge-sci">SCI</span></li>
-    <li>Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, et al. Real-time traffic sign detection based on multiscale attention and spatial information aggregator. <span class="journal-name">Journal of Real-Time Image Processing</span>, 2022, 19(6), 1155–1167. <span class="badge badge-sci">SCI</span></li>
-    <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, et al. Dual model learning combined with multiple feature selection for accurate visual tracking. <span class="journal-name">IEEE Access</span>, 2019, 7, 43956-43969. <span class="badge badge-sci">SCI</span></li>
-    <li>张建明, <strong>金晓康</strong>, 吴宏林, 伍悠. 基于多模型的实时压缩跟踪算法. <span class="journal-name">电子与信息学报</span>, 2018, 40(10): 2373-2380. <span class="badge badge-ei">EI</span></li>
-    <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Yukai Liu, et al. Small sample face recognition algorithm based on novel Siamese network. <span class="journal-name">Journal of Information Processing Systems</span>, 2018, 14(6), 1464-1479. <span class="badge badge-ei">EI</span></li>
-    <li>Jianming Zhang, You Wu, <strong>Xiaokang Jin</strong>, et al. A fast object tracker based on integrated multiple features and dynamic learning rate. <span class="journal-name">Mathematical Problems in Engineering</span>, 2018. <span class="badge badge-sci">SCI</span></li>
-    <li>Zhang Jianming, Huang Manting, <strong>金晓康</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017. <span class="badge badge-ei">EI</span></li>
-  </ul>
+    <div class="main-content">
+      <h1 class="section-title" id="about-me"><i class="fas fa-id-card"></i>About Me</h1>
+      <div class="intro-text">
+        <p>I am currently pursuing my PhD degree in <strong>Computer Science and Technology</strong> from <strong>Zhejiang Normal University</strong>, under the supervision of <a href="https://scholar.google.com/citations?user=KO3MIkQAAAAJ&hl=en">Prof. Jia Zhu</a>. Previously, I obtained my B.S. and M.S. degrees in <strong>Computer Science and Technology</strong> from <strong>Changsha University of Science and Technology</strong>, advised by <a href="https://scholar.google.com/citations?user=bwrCnUUAAAAJ">Prof. Jianming Zhang</a>.</p>
+        <p>I am also currently serving as a Lecturer at <strong>Jinhua Advanced Research Institute</strong>. My research interests focus on <strong>Computer Vision</strong> and <strong>Multimodal AI</strong>, with a particular emphasis on <strong>Educational Video Understanding, Retrieval-Augmented Generation (RAG), Object Tracking</strong>, and <strong>Knowledge Graphs</strong>.</p>
+      </div>
 
-  <h1 class="section-title" id="patents">Patents & Copyrights</h1>
-  <h2>Patents</h2>
-  <ul>
-    <li>1. <strong>金晓康</strong>, 姚泽瑾等. 一种目标跟踪方法、装置、设备及存储介质. 授权号：ZL202010481945.5. <span class="badge badge-success">已授权</span></li>
-    <li>2. 张建明, <strong>金晓康</strong>, 等. 一种基于多级特征的双学习模型目标跟踪方法. 授权号: ZL201811405327.1. <span class="badge badge-success">已授权</span></li>
-    <li>3. 董长春, 曹楠, 韩煜, <strong>金晓康</strong>. 一种用于光电雪崩二极管C-V曲线的测量装置及测量方法. 授权号：ZL202110946871.2 <span class="badge badge-success">已授权</span></li>
-    <li>4. <strong>金晓康</strong>. 一种基于注意力机制和角点检测的高效孪生跟踪方法. 申请号: 202311470810.9. <span class="badge badge-gray">等待实审</span></li>
-    <li>5. <strong>金晓康</strong>. 一种基于多线程并行的GPU快速目标跟踪方法. 申请号：202310510664.1. <span class="badge badge-gray">等待实审</span></li>
-  </ul>
+      <h1 class="section-title" id="publications"><i class="fas fa-file-alt"></i>Publications</h1>
+      
+      <h2>Conference Papers</h2>
+      <ul>
+        <li>jingjiang liu, Jia Zhu, Hanghui Guo, <strong>Xiaokang Jin</strong>, et al. KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning. <span class="journal-name">ACL Main</span>. <span class="badge badge-ccf">CCF A</span></li>
+        <li><strong>Xiaokang Jin</strong>, Jia Zhu, jingjiang liu, Yabing Shi, et al. PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding. <span class="journal-name">ACL Findings</span>. <span class="badge badge-ccf">CCF A</span></li>
+      </ul>
 
-  <h2>Software Copyrights</h2>
-  <ul>
-    <li>1. <strong>金晓康</strong>. 工业设备缺陷多模态检测系统. 2025SR0954414.</li>
-    <li>2. <strong>金晓康</strong>. 网络安全运行管理系统. 2024SR2039707.</li>
-    <li>3. <strong>金晓康</strong>. 动态目标实时跟踪系统. 2023SR0363765.</li>
-    <li>4. 姚怡雪, <strong>金晓康</strong>. 机器人机械臂轨迹定位跟踪系统. 2023SR1773356.</li>
-    <li>5. 姚怡雪, <strong>金晓康</strong>. 基于视觉的机械臂运动物体识别抓取系统V1.0. 2023SR1774295.</li>
-    <li>6. <strong>金晓康</strong>. 面向目标跟踪系统的测试工具软件V1.0. 22021SR1855455.</li>
-    <li>7. <strong>金晓康</strong>, 张建明. 基于相关滤波的多姿态行人跟踪系统. 2018SR619809.</li>
-    <li>8. <strong>金晓康</strong>, 张建明. 基于WEB前端的旅游系统. 2018SR618438.</li>
-  </ul>
+      <h2>Journal Papers</h2>
+      <ul>
+        <li>1. Jianming Zhang, Jiangxing Dai, <strong>Xiaokang Jin*</strong>, Nai Ke. Learning Distortion-Aware Correlation Filters with Target Mask for UAV Tracking. <span class="journal-name">The European Journal on Artificial Intelligence</span>. 2026.</li>
+        <li>2. <strong>Xiaokang Jin</strong>, Benben Huang, Hao Sheng, Yao Wu. An anchor-free Siamese tracker with multi-attention and corner detection mechanism. <span class="journal-name">IEICE Transactions on Information and Systems</span>. 2025. <span class="badge badge-sci">SCI</span></li>
+        <li>3. Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. An efficient deep learning framework for mixed-type wafer map defect pattern recognition. <span class="journal-name">AIP Advances</span>, 2024. <span class="badge badge-sci">SCI</span></li>
+        <li>4. Jianming Zhang, Haitao Huang, <strong>Xiaokang Jin</strong>, et al. Siamese visual tracking based on criss-cross attention and improved head network. <span class="journal-name">Multimedia Tools and Applications</span>, 2024. <span class="badge badge-ccf">CCF C</span></li>
+        <li>5. Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. Attention-based encoder–decoder network for depth estimation from color-coded light fields. <span class="journal-name">AIP Advances</span>, 2023. <span class="badge badge-sci">SCI</span></li>
+        <li>6. Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, et al. Real-time traffic sign detection based on multiscale attention and spatial information aggregator. <span class="journal-name">Journal of Real-Time Image Processing</span>, 2022. <span class="badge badge-sci">SCI</span></li>
+        <li>7. Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, et al. Spatial and semantic convolutional features for robust visual object tracking. <span class="journal-name">Multimedia Tools and Applications</span>, 2020. <span class="badge badge-ccf">CCF C</span></li>
+        <li>8. Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, et al. Dual model learning combined with multiple feature selection for accurate visual tracking. <span class="journal-name">IEEE Access</span>, 2019. <span class="badge badge-sci">SCI</span></li>
+        <li>9. 张建明, <strong>金晓康</strong>, 吴宏林, 伍悠. 基于多模型的实时压缩跟踪算法. <span class="journal-name">电子与信息学报</span>, 2018. <span class="badge badge-ei">EI</span></li>
+        <li>10. Jianming Zhang, <strong>Xiaokang Jin</strong>, Yukai Liu, et al. Small sample face recognition algorithm based on novel Siamese network. <span class="journal-name">Journal of Information Processing Systems</span>, 2018. <span class="badge badge-ei">EI</span></li>
+        <li>11. Jianming Zhang, You Wu, <strong>Xiaokang Jin</strong>, et al. A fast object tracker based on integrated multiple features and dynamic learning rate. <span class="journal-name">Mathematical Problems in Engineering</span>, 2018. <span class="badge badge-sci">SCI</span></li>
+        <li>12. 张建明, 黄满婷, <strong>金晓康</strong>, 等. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017. <span class="badge badge-ei">EI</span></li>
+        <li>13. 刘宇凯, <strong>金晓康</strong>, 张建明, 廖婷婷. 基于局部结构的多尺度协作表示人脸识别算法. <span class="journal-name">计算机工程与应用</span>. 2018. <span class="badge badge-purple">CSCD</span></li>
+        <li>14. <strong>金晓康</strong>, 吴瑶, 施莹娟, 等. 基于YOLO框架的实时交通标志识别算法研究与系统实现. <span class="journal-name">软件</span>, 2023.</li>
+      </ul>
 
-  <h1 class="section-title" id="awards">Honors & Awards</h1>
-  <ul>
-    <li>硕士研究生国家奖学金 <span class="badge badge-success">教育部</span>, 2018</li>
-    <li>湖南省优秀硕士学位论文 <span class="badge badge-success">湖南省政府</span>, 2021</li>
-    <li>校级优秀毕业设计（论文） <span class="badge badge-gray">长沙理工大学</span>, 2016</li>
-    <li>第九届全国计算机类课程实验教学案例评选 <span class="badge badge-hot">一等奖</span>, 2024</li>
-    <li>CCF 第七届开源设计大赛 <span class="badge badge-hot">二等奖</span>, 2024</li>
-    <li>CCF 第六届开源设计大赛 <span class="badge badge-hot">二等奖</span>, 2023</li>
-  </ul>
+      <h1 class="section-title" id="patents"><i class="fas fa-lightbulb"></i>Patents & Copyrights</h1>
+      <h2>Patents</h2>
+      <ul>
+        <li>1. <strong>金晓康</strong>, 等. 一种目标跟踪方法、装置、设备及存储介质. 授权号：ZL202010481945.5. <span class="badge badge-success">已授权</span></li>
+        <li>2. 张建明, <strong>金晓康</strong>, 李旭东. 一种自适应相关滤波器目标跟踪方法及系统. 授权号: ZL201811405327.1. <span class="badge badge-success">已授权</span></li>
+        <li>3. 董长春, 曹楠, 韩煜, <strong>金晓康</strong>. 一种用于光电雪崩二极管C-V曲线的测量装置及测量方法. 授权号：ZL202110946871.2 <span class="badge badge-success">已授权</span></li>
+        <li>4. <strong>金晓康</strong>. 一种基于注意力机制和角点检测的高效孪生跟踪方法. 申请号: 202311470810.9. <span class="badge badge-gray">等待实审</span></li>
+        <li>5. <strong>金晓康</strong>. 一种基于多线程并行的GPU快速目标跟踪方法. 申请号：202310510664.1. <span class="badge badge-gray">等待实审</span></li>
+      </ul>
 
-  <h1 class="section-title" id="projects">Projects</h1>
-  <ul>
-    <li>跨领域多模态数据融合驱动下的多智能体智能决策服务研发及示范应用. 浙江省尖兵领雁项目. <span class="badge badge-info">在研</span></li>
-    <li>智能视频监控系统中的目标跟踪技术研究. 金华市公益性技术项目. <span class="badge badge-success">结题</span></li>
-    <li>视觉跟踪中目标深度表观模型的学习与更新方法研究. 国家自然科学基金面上项目. <span class="badge badge-success">结题</span></li>
-    <li>基于深度网络和相关滤波的视觉跟踪方法研究. 院设高层次培育项目. <span class="badge badge-success">结题</span></li>
-    <li>“五个贯穿”在JavaWeb程序设计中的应用研究. <span class="badge badge-info">在研</span></li>
-    <li>网络空间安全靶场中的教学实训平台研究. <span class="badge badge-info">在研</span></li>
-  </ul>
-</div>
-```
+      <h2>Software Copyrights</h2>
+      <ul>
+        <li>1. <strong>金晓康</strong>. 工业设备缺陷多模态检测系统. 2025SR0954414.</li>
+        <li>2. <strong>金晓康</strong>. 网络安全运行管理系统. 2024SR2039707.</li>
+        <li>3. <strong>金晓康</strong>. 动态目标实时跟踪系统. 2023SR0363765.</li>
+        <li>4. 姚怡雪, <strong>金晓康</strong>. 机器人机械臂轨迹定位跟踪系统. 2023SR1773356.</li>
+        <li>5. <strong>金晓康</strong>. 面向目标跟踪系统的测试工具软件V1.0. 22021SR1855455.</li>
+      </ul>
 
-\</div\>
-\</body\>
-\</html\>
+      <h1 class="section-title" id="awards"><i class="fas fa-award"></i>Honors & Awards</h1>
+      <ul>
+        <li>硕士研究生国家奖学金 <span class="badge badge-success">教育部</span>, 2018</li>
+        <li>湖南省优秀硕士学位论文 <span class="badge badge-success">湖南省政府</span>, 2021</li>
+        <li>校级优秀毕业设计（论文） <span class="badge badge-gray">长沙理工大学</span>, 2016</li>
+        <li>第九届全国计算机类课程实验教学案例评选 <span class="badge badge-hot">一等奖</span>, 2024</li>
+        <li>CCF 第七届开源设计大赛 <span class="badge badge-hot">二等奖</span>, 2024</li>
+        <li>CCF 第六届开源设计大赛 <span class="badge badge-hot">二等奖</span>, 2023</li>
+      </ul>
+
+      <h1 class="section-title" id="projects"><i class="fas fa-tasks"></i>Projects</h1>
+      <ul>
+        <li>跨领域多模态数据融合驱动下的多智能体智能决策服务研发及示范应用. 浙江省尖兵领雁项目. <span class="badge badge-info">在研</span></li>
+        <li>智能视频监控系统中的目标跟踪技术研究. 金华市公益性技术项目. <span class="badge badge-success">结题</span></li>
+        <li>视觉跟踪中目标深度表观模型的学习与更新方法研究. 国家自然科学基金面上项目. <span class="badge badge-success">结题</span></li>
+        <li>基于深度网络和相关滤波的视觉跟踪方法研究. 院设高层次培育项目. <span class="badge badge-success">结题</span></li>
+        <li>“五个贯穿”在JavaWeb程序设计中的应用研究. <span class="badge badge-info">在研</span></li>
+        <li>网络空间安全靶场中的教学实训平台研究. <span class="badge badge-info">在研</span></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
