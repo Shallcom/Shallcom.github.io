@@ -37,7 +37,7 @@
   /* 全局基础设置 */
   body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #3f3f46;
+      color: #334155;
       line-height: 1.7;
       background-color: #ffffff;
       margin: 0;
@@ -50,8 +50,7 @@
       padding: 15px 0;
       position: sticky;
       top: 0;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(5px);
+      background-color: rgba(255, 255, 255, 0.98);
       z-index: 9999;
   }
   .greedy-nav .visible-links {
@@ -62,15 +61,14 @@
       margin: 0;
   }
   .greedy-nav .masthead__menu-item {
-      margin: 0 10px;
+      margin: 0 15px;
   }
   .greedy-nav .masthead__menu-item a {
       color: #475569;
       text-decoration: none;
       font-weight: 600;
       font-size: 16px;
-      padding: 8px 16px;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
   }
   .greedy-nav .masthead__menu-item a:hover {
       color: #0ea5e9;
@@ -80,7 +78,7 @@
   .page-container {
       max-width: 1100px;
       margin: 50px auto;
-      padding: 0 20px;
+      padding: 0 25px;
       display: flex;
       gap: 60px;
       align-items: flex-start;
@@ -88,19 +86,19 @@
 
   /* 左侧侧边栏 */
   .sidebar {
-      flex: 0 0 260px;
+      flex: 0 0 270px;
       position: sticky;
       top: 100px;
   }
   .sidebar h1 {
       font-size: 1.8em;
-      color: #1e293b;
-      margin: 0 0 8px 0;
+      color: #0f172a;
+      margin: 0 0 10px 0;
       font-weight: 800;
   }
   .sidebar .affiliations {
       color: #475569;
-      font-size: 1em;
+      font-size: 1.05em;
       margin-bottom: 20px;
       line-height: 1.4;
   }
@@ -108,14 +106,13 @@
       color: #64748b;
       font-size: 0.95em;
       margin-bottom: 25px;
-      font-weight: 500;
   }
   .sidebar ul {
       list-style: none;
       padding: 0;
   }
   .sidebar ul li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-size: 0.92em;
       display: flex;
       align-items: center;
@@ -135,70 +132,63 @@
       text-decoration: underline;
   }
 
-  /* 右侧内容区 */
+  /* 右侧主内容 */
   .main-content {
       flex: 1;
       min-width: 0;
   }
 
-  /* 简介区域 */
   .intro-text {
       font-size: 1.05em;
       color: #334155;
       margin-bottom: 40px;
       text-align: justify;
   }
-  .intro-text a {
-      color: #0284c7;
-      text-decoration: none;
-      font-weight: 600;
-  }
-  .intro-text a:hover {
-      text-decoration: underline;
-  }
 
   /* 标题样式 */
   .section-title {
       font-size: 1.6em;
-      color: #1e293b;
+      color: #0f172a;
       border-bottom: 2px solid #f1f5f9;
-      padding-bottom: 10px;
-      margin: 50px 0 25px 0;
+      padding-bottom: 8px;
+      margin: 45px 0 20px 0;
       font-weight: 800;
   }
   .main-content h2 {
       font-size: 1.25em;
-      color: #334155;
-      margin: 35px 0 15px 0;
+      color: #1e293b;
+      margin: 30px 0 15px 0;
       font-weight: 700;
   }
 
-  /* 列表样式 (去方框) */
+  /* 纯文本列表样式：移除所有背景和边框 */
   .main-content ul {
       list-style-type: none;
       padding-left: 0;
       margin-bottom: 30px;
   }
   .main-content ul li {
-      margin-bottom: 15px;
-      padding-bottom: 5px;
+      margin-bottom: 12px;
       line-height: 1.6;
-      font-size: 0.98em;
+      font-size: 1em;
       color: #334155;
-      position: relative;
+      padding: 0; /* 移除内边距 */
+      background: none; /* 移除背景 */
+      border: none; /* 移除边框 */
+      box-shadow: none; /* 移除阴影 */
   }
 
-  /* 期刊名高亮 */
+  /* 期刊/会议名高亮 */
   .journal-name {
       font-weight: 600;
       color: #0369a1;
       font-style: italic;
   }
 
-  /* 徽章样式 */
+  /* 徽章样式：轻量化 */
   .badge {
       display: inline-block;
-      padding: 1px 8px;
+      padding: 1px 7px;
       border-radius: 4px;
       font-size: 0.75em;
       font-weight: 700;
@@ -219,6 +209,7 @@
   @media (max-width: 850px) {
       .page-container {
           flex-direction: column;
+          margin-top: 20px;
       }
       .sidebar {
           width: 100%;
@@ -268,14 +259,18 @@
         <p>I am currently pursuing my PhD degree in <strong>Computer Science and Technology</strong> from <strong>Zhejiang Normal University</strong>, under the supervision of <a href="https://scholar.google.com/citations?user=KO3MIkQAAAAJ&hl=en">Prof. Jia Zhu</a>. Previously, I obtained my B.S. and M.S. degrees in <strong>Computer Science and Technology</strong> from <strong>Changsha University of Science and Technology</strong>, advised by <a href="https://scholar.google.com/citations?user=bwrCnUUAAAAJ">Prof. Jianming Zhang</a>.</p>
         <p>I am also currently serving as a Lecturer at <strong>Jinhua Advanced Research Institute</strong>. My research interests focus on <strong>Computer Vision</strong> and <strong>Multimodal AI</strong>, with a particular emphasis on <strong>Educational Video Understanding, Retrieval-Augmented Generation (RAG), Object Tracking</strong>, and <strong>Knowledge Graphs</strong>.</p>
       </div>
-        
+
       <h1 class="section-title" id="publications">Publications</h1>
+      
       <h2>Conference Papers</h2>
-        <li>jingjiang liu, Jia Zhu, Hanghui Guo, Weijie Shi, Yue Cui, <strong>Xiaokang Jin</strong>, Yilin Wang, Qingyu Niu, Jiawei Shen, Guoqing Ma, Yidan Liang, Shimin Di, Jiajie Xu. KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning. <span class="journal-name">ACL Main</span>.</li>
-        <li><strong>Xiaokang Jin<strong>, Jia Zhu, jingjiang liu, Yabing Shi, Jueqi Guan, Hao Chen, Pasquale De Meo. PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding. <span class="journal-name">ACL Findings</span>.</li>
+      <ul>
+        <li>jingjiang liu, Jia Zhu, Hanghui Guo, Weijie Shi, Yue Cui, <strong>Xiaokang Jin</strong>, Yilin Wang, Qingyu Niu, Jiawei Shen, Guoqing Ma, Yidan Liang, Shimin Di, Jiajie Xu. KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning. <span class="journal-name">ACL Main</span>. <span class="badge badge-ccf">CCF A</span></li>
+        <li><strong>Xiaokang Jin</strong>, Jia Zhu, jingjiang liu, Yabing Shi, Jueqi Guan, Hao Chen, Pasquale De Meo. PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding. <span class="journal-name">ACL Findings</span>. <span class="badge badge-ccf">CCF A</span></li>
+      </ul>
+
       <h2>Journal Papers</h2>
       <ul>
-        <li>Jianming Zhang, Jiangxing Dai, <strong>Xiaokang Jin*</strong>, Nai Ke. Learning Distortion-Aware Correlation Filters with Target Mask for UAV Tracking. <span class="journal-name">The European Journal on Artificial Intelligence</span>. 2026; 39(2):504-521.</li>
+        <li>Jianming Zhang, Jiangxing Dai, <strong>Xiaokang Jin*</strong>, Nai Ke. Learning Distortion-Aware Correlation Filters with Target Mask for UAV Tracking. <span class="journal-name">The European Journal on Artificial Intelligence</span>. 2026; 39(2):504-521. <span class="badge badge-purple">Corresponding Author</span></li>
         <li><strong>Xiaokang Jin</strong>, Benben Huang, Hao Sheng, Yao Wu. An anchor-free Siamese tracker with multi-attention and corner detection mechanism. <span class="journal-name">IEICE Transactions on Information and Systems</span>. 2025, E108.D(4), 349-359. <span class="badge badge-sci">SCI</span></li>
         <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. An efficient deep learning framework for mixed-type wafer map defect pattern recognition. <span class="journal-name">AIP Advances</span>, 2024, 14(4). <span class="badge badge-sci">SCI</span></li>
         <li>Jianming Zhang, Haitao Huang, <strong>Xiaokang Jin</strong>, et al. Siamese visual tracking based on criss-cross attention and improved head network. <span class="journal-name">Multimedia Tools and Applications</span>, 2024, 83(1): 1589-1615. <span class="badge badge-ccf">CCF C</span> <span class="badge badge-info">Citations: 30</span></li>
@@ -287,7 +282,7 @@
         <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Yukai Liu, Arun Kumar Sangaiah, Wang Jin. Small sample face recognition algorithm based on novel Siamese network. <span class="journal-name">Journal of Information Processing Systems</span>, 2018, 14(6), 1464-1479. <span class="badge badge-ei">EI</span></li>
         <li>Jianming Zhang, You Wu, <strong>Xiaokang Jin</strong>, et al. A fast object tracker based on integrated multiple features and dynamic learning rate. <span class="journal-name">Mathematical Problems in Engineering</span>, 2018, Article ID 5986062. <span class="badge badge-sci">SCI</span> <span class="badge badge-info">Citations: 11</span></li>
         <li>刘宇凯, <strong>金晓康</strong>, 张建明, 廖婷婷. 基于局部结构的多尺度协作表示人脸识别算法. <span class="journal-name">计算机工程与应用</span>. 2018, 54(17): 151-157. <span class="badge badge-purple">CSCD</span></li>
-        <li>Zhang Jianming, Huang Manting, <strong>Jin Xiaokang</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span> <span class="badge badge-info">Citations: 304</span></li>
+        <li>Zhang Jianming, Huang Manting, <strong>金晓康</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span> <span class="badge badge-info">Citations: 304</span></li>
         <li><strong>金晓康</strong>, 吴瑶, 施莹娟, 等. 基于YOLO框架的实时交通标志识别算法研究与系统实现. <span class="journal-name">软件</span>, 2023, 44(01): 20-23.</li>
       </ul>
 
@@ -334,19 +329,17 @@
       <h1 class="section-title" id="projects">Projects</h1>
       <h2>Research Projects</h2>
       <ul>
-        <li>跨领域多模态数据融合驱动下的多智能体智能决策服务研发及示范应用. 浙江省尖兵领雁项目. 2026-2028. <span class="badge badge-gray">参与</span> <span class="badge badge-info">在研</span></li>
-        <li>智能视频监控系统中的目标跟踪技术研究. 金华市公益性技术项目. 2022-2024. <span class="badge badge-ccf">主持</span> <span class="badge badge-success">结题</span></li>
-        <li>基于深度网络和相关滤波的视觉跟踪方法研究. 院设高层次培育项目. 2021-2023. <span class="badge badge-ccf">主持</span> <span class="badge badge-success">结题</span></li>
-        <li>视觉跟踪中目标深度表观模型的学习与更新方法研究. 国家自然科学基金面上项目. 2020-2023. <span class="badge badge-gray">参与</span> <span class="badge badge-success">结题</span></li>
-        <li>基于深度学习和稀疏表达的交通标志图像检测与分类算法研究. 湖南省教育厅科研重点项目. 2016-2019. <span class="badge badge-gray">参与</span> <span class="badge badge-success">结题</span></li>
-        <li>基于树莓派开源硬件平台与无线网络的嵌入式智能视频监控系统. 湖南省大创项目. 2014-2015. <span class="badge badge-ccf">主持</span> <span class="badge badge-success">结题</span></li>
+        <li>跨领域多模态数据融合驱动下的多智能体智能决策服务研发及示范应用. 浙江省尖兵领雁项目. <span class="badge badge-info">在研</span></li>
+        <li>智能视频监控系统中的目标跟踪技术研究. 金华市公益性技术项目. <span class="badge badge-success">结题</span></li>
+        <li>视觉跟踪中目标深度表观模型的学习与更新方法研究. 国家自然科学基金面上项目. <span class="badge badge-success">结题</span></li>
+        <li>基于深度网络和相关滤波的视觉跟踪方法研究. 院设高层次培育项目. <span class="badge badge-success">结题</span></li>
       </ul>
       <h2>Teaching Reform Projects</h2>
       <ul>
-        <li>“五个贯穿”在JavaWeb程序设计中的应用研究. 2024-2025. <span class="badge badge-ccf">主持</span> <span class="badge badge-info">在研</span></li>
-        <li>网络空间安全靶场中的教学实训平台研究. 2024-2026. <span class="badge badge-ccf">主持</span> <span class="badge badge-info">在研</span></li>
-        <li>Java Web课程的在线实践智慧测评系统的构建与实施. 2023-2024. <span class="badge badge-ccf">主持</span> <span class="badge badge-success">结题</span></li>
-        <li>基于产教融合的网络空间安全靶场建设的研究. 2021-2022. <span class="badge badge-ccf">主持</span> <span class="badge badge-success">结题</span></li>
+        <li>“五个贯穿”在JavaWeb程序设计中的应用研究. <span class="badge badge-info">在研</span></li>
+        <li>网络空间安全靶场中的教学实训平台研究. <span class="badge badge-info">在研</span></li>
+        <li>Java Web课程的在线实践智慧测评系统的构建与实施. <span class="badge badge-success">结题</span></li>
+        <li>基于产教融合的网络空间安全靶场建设的研究. <span class="badge badge-success">结题</span></li>
       </ul>
     </div>
   </div>
