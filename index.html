@@ -71,6 +71,19 @@
       position: sticky;
       top: 100px;
   }
+
+  /* --- 唯一新增：照片样式 --- */
+  .profile-pic {
+      width: 160px;          /* 根据需要调整宽度 */
+      height: 160px;         /* 高度需与宽度一致保持正方形 */
+      border-radius: 50%;    /* 制作为圆形 */
+      object-fit: cover;     /* 确保图片不拉伸 */
+      margin-bottom: 20px;   /* 与下方名字的间距 */
+      display: block;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* 加一点淡淡的阴影 */
+  }
+  /* --------------------------- */
+
   .sidebar .side-title {
       font-size: 2em;
       color: #0f172a;
@@ -160,10 +173,10 @@
       font-weight: 700;
   }
 
-  /* --- 唯一修改点：恢复无序列表圆点 --- */
+  /* 无序列表样式：恢复圆点并增加缩进 */
   .main-content ul {
-      list-style-type: disc; /* 改为 disc 显示圆点 */
-      padding-left: 25px;    /* 留出圆点空间 */
+      list-style-type: disc;
+      padding-left: 25px;
       margin-bottom: 40px;
   }
   .main-content ul li {
@@ -171,19 +184,19 @@
       line-height: 1.7;
       font-size: 1.05em;
       color: #334155;
-      /* 删除了 padding: 0 以免遮挡圆点 */
   }
-  /* ---------------------------------- */
 
+  /* 期刊/会议名高亮 */
   .journal-name {
       font-weight: 600;
       color: #0369a1;
       font-style: italic;
   }
 
+  /* 徽章样式 */
   .badge {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 1px 8px;
       border-radius: 4px;
       font-size: 0.72em;
       font-weight: 700;
@@ -231,6 +244,7 @@
 
   <div class="page-container">
     <div class="sidebar">
+      <img src="images/profile.jpg" alt="Xiaokang Jin" class="profile-pic">
       <h1 class="side-title"><i class="fas fa-user-circle"></i>Xiaokang Jin</h1>
       <div class="affiliations">
         Zhejiang Normal University<br>
@@ -250,6 +264,7 @@
     </div>
 
     <div class="main-content">
+      <h1 class="section-title" id="about-me"><i class="fas fa-id-card"></i>About Me</h1>
       <div class="intro-text">
         <p>I am currently pursuing my PhD degree in <strong>Computer Science and Technology</strong> from <strong>Zhejiang Normal University</strong>, under the supervision of <a href="https://scholar.google.com/citations?user=KO3MIkQAAAAJ&hl=en">Prof. Jia Zhu</a>. Previously, I obtained my B.S. and M.S. degrees in <strong>Computer Science and Technology</strong> from <strong>Changsha University of Science and Technology</strong>, advised by <a href="https://scholar.google.com/citations?user=bwrCnUUAAAAJ">Prof. Jianming Zhang</a>.</p>
         <p>I am also currently serving as a Lecturer at <strong>Jinhua Advanced Research Institute</strong>. My research interests focus on <strong>Computer Vision</strong> and <strong>Multimodal AI</strong>, with a particular emphasis on <strong>Educational Video Understanding, Retrieval-Augmented Generation (RAG), Object Tracking</strong>, and <strong>Knowledge Graphs</strong>.</p>
@@ -270,13 +285,13 @@
         <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. An efficient deep learning framework for mixed-type wafer map defect pattern recognition. <span class="journal-name">AIP Advances</span>, 2024, 14(4). <span class="badge badge-sci">SCI</span></li>
         <li>Jianming Zhang, Haitao Huang, <strong>Xiaokang Jin</strong>, et al. Siamese visual tracking based on criss-cross attention and improved head network. <span class="journal-name">Multimedia Tools and Applications</span>, 2024, 83(1): 1589-1615. <span class="badge badge-ccf">CCF C</span></li>
         <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. Attention-based encoder–decoder network for depth estimation from color-coded light fields. <span class="journal-name">AIP Advances</span>, 2023, 13(3). <span class="badge badge-sci">SCI</span></li>
-        <li>Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, et al. Real-time traffic sign detection based on multiscale attention and spatial information aggregator. <span class="journal-name">Journal of Real-Time Image Processing</span>, 2022, vol. 19, no. 6, pp. 1155–1167. <span class="badge badge-sci">SCI</span></li>
-        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, et al. Spatial and semantic convolutional features for robust visual object tracking. <span class="journal-name">Multimedia Tools and Applications</span>, 2020, 79(21-22), 15095-15115. <span class="badge badge-ccf">CCF C</span></li>
-        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, et al. Dual model learning combined with multiple feature selection for accurate visual tracking. <span class="journal-name">IEEE Access</span>, 2019, 7, 43956-43969. <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, et al. Real-time traffic sign detection based on multiscale attention and spatial information aggregator. <span class="journal-name">Journal of Real-Time Image Processing</span>, 2022, vol. 19, no. 6, pp. 1155–1167. DOI: 10.1007/s11554-022-01252-w. <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, Jin Wang, Arun Kumar Sangaiah. Spatial and semantic convolutional features for robust visual object tracking. <span class="journal-name">Multimedia Tools and Applications</span>, 2020, vol. 79, no. 21-22, pp. 15095-15115. <span class="badge badge-ccf">CCF C</span></li>
+        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, Jin Wang, Keqin Li. Dual model learning combined with multiple feature selection for accurate visual tracking. <span class="journal-name">IEEE Access</span>, 2019, vol. 7, pp. 43956-43969. <span class="badge badge-sci">SCI</span></li>
         <li>张建明, <strong>金晓康</strong>, 吴宏林, 伍悠. 基于多模型的实时压缩跟踪算法. <span class="journal-name">电子与信息学报</span>, 2018, 40(10): 2373-2380. <span class="badge badge-ei">EI</span></li>
-        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Yukai Liu, Arun Kumar Sangaiah, Wang Jin. Small sample face recognition algorithm based on novel Siamese network. <span class="journal-name">Journal of Information Processing Systems</span>, 2018, 14(6), 1464-1479. <span class="badge badge-ei">EI</span></li>
+        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Yukai Liu, Arun Kumar Sangaiah, Wang Jin. Small sample face recognition algorithm based on novel Siamese network. <span class="journal-name">Journal of Information Processing Systems</span>, 2018, vol. 14, no. 6, pp. 1464-1479. <span class="badge badge-ei">EI</span></li>
         <li>Jianming Zhang, You Wu, <strong>Xiaokang Jin</strong>, et al. A fast object tracker based on integrated multiple features and dynamic learning rate. <span class="journal-name">Mathematical Problems in Engineering</span>, 2018, Article ID 5986062. <span class="badge badge-sci">SCI</span></li>
-        <li>Zhang Jianming, Huang Manting, <strong>Xiaokang Jin</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span></li>
+        <li>张建明, 黄满婷, <strong>金晓康</strong>, 等. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span></li>
         <li>刘宇凯, <strong>金晓康</strong>, 张建明, 廖婷婷. 基于局部结构的多尺度协作表示人脸识别算法. <span class="journal-name">计算机工程与应用</span>. 2018, 54(17): 151-157. <span class="badge badge-purple">CSCD</span></li>
         <li><strong>金晓康</strong>, 吴瑶, 施莹娟, 等. 基于YOLO框架的实时交通标志识别算法研究与系统实现. <span class="journal-name">软件</span>, 2023, 44(01): 20-23.</li>
       </ul>
@@ -331,11 +346,12 @@
         <li>基于相关滤波和深度学习的单目标跟踪技术研究. 湖南省研究生科研创新项目. <span class="badge badge-success">参与/结题</span></li>
         <li>基于多核相关滤波器的判别可靠性学习跟踪研究. 湖南省研究生科研创新项目. <span class="badge badge-success">参与/结题</span></li>
         <li>云计算和大数据教育软件咨询服务. 广东轩辕网络科技技术服务. <span class="badge badge-success">参与/结题</span></li>
+        <li>基于产教融合的智慧就业指导体系建设的研究. 金华市教育科学规划研究课题. <span class="badge badge-info">在研</span></li>
       </ul>
       <h2>Teaching Reform Projects</h2>
       <ul>
-        <li>“五个贯穿”在JavaWeb程序设计中的应用研究. 金华高研院重点课题. <span class="badge badge-info">主持/在研</span></li>
-        <li>网络空间安全靶场中的教学实训平台研究.  金华高研院专项课题.<span class="badge badge-info">主持/在研</span></li>
+        <li>“五个贯穿”在JavaWeb程序设计中的应用研究. 金华高研院重点课题. <span class="badge badge-info">在研</span></li>
+        <li>网络空间安全靶场中的教学实训平台研究.  金华高研院专项课题.<span class="badge badge-info">在研</span></li>
         <li>Java Web课程的在线实践智慧测评系统的构建与实施. 金华市教育科学规划研究课题.<span class="badge badge-success">主持/结题</span></li>
         <li>基于产教融合的网络空间安全靶场建设的研究. 金华市教育科学规划研究课题.<span class="badge badge-success">主持/结题</span></li>
         <li>基于产教融合的智慧就业指导体系建设的研究. 金华市教育科学规划研究课题.<span class="badge badge-success">执笔/结题</span></li>
