@@ -1,375 +1,829 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xiaokang Jin | Multimodal AI Research</title>
+  <meta charset="utf-8">
+  <title>Xiaokang Jin - Homepage</title>
+  <meta name="description" content="Academic homepage of Xiaokang Jin, focusing on computer vision, multimodal AI, educational video understanding, retrieval-augmented generation, object tracking, and knowledge graphs.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-:root{
-    --navy:#16324F;
-    --blue:#2563A6;
-    --text:#1e293b;
-    --gray:#64748b;
-    --line:#e2e8f0;
-    --bg:#ffffff;
+  :root {
+      --navy: #12355b;
+      --blue: #2563a6;
+      --cyan: #0ea5e9;
+      --ink: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --soft-line: #eef2f7;
+      --soft-bg: #f8fafc;
+      --white: #ffffff;
+      --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 14px 34px rgba(15, 23, 42, 0.09);
+  }
+
+  * {
+      box-sizing: border-box;
+  }
+
+  html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+  }
+
+  body {
+      font-family: 'Lora', Georgia, "Times New Roman", serif;
+      color: var(--text);
+      line-height: 1.8;
+      background:
+          radial-gradient(circle at top right, rgba(37, 99, 166, 0.055), transparent 26rem),
+          linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      margin: 0;
+      padding: 0;
+  }
+
+  a {
+      color: var(--blue);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  a:hover {
+      color: var(--cyan);
+  }
+
+  h1, h2, h3,
+  .masthead,
+  .sidebar .affiliations,
+  .badge,
+  .title-status,
+  .hero-kicker,
+  .research-chip,
+  .section-count,
+  .list-label {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  /* 顶部导航栏 */
+  .masthead {
+      border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 9999;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+  }
+
+  .greedy-nav {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 0 34px;
+  }
+
+  .greedy-nav .visible-links {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      padding: 12px 0;
+      margin: 0;
+  }
+
+  .greedy-nav .masthead__menu-item {
+      margin: 0;
+  }
+
+  .greedy-nav .masthead__menu-item a {
+      display: block;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .greedy-nav .masthead__menu-item a:hover {
+      color: var(--navy);
+      background: #f1f5f9;
+  }
+
+  /* 主布局 */
+  .page-container {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 54px 42px 80px;
+      display: flex;
+      gap: 66px;
+      align-items: flex-start;
+  }
+
+  /* 左侧信息栏 */
+  .sidebar {
+      flex: 0 0 300px;
+      position: sticky;
+      top: 92px;
+      padding: 28px 25px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.91);
+      box-shadow: var(--shadow-sm);
+  }
+
+  .profile-pic {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 0 22px;
+      display: block;
+      border: 5px solid #ffffff;
+      box-shadow:
+          0 0 0 1px #dbe5f0,
+          0 14px 30px rgba(15, 23, 42, 0.14);
+  }
+
+  .sidebar .side-title {
+      font-size: 2.05em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin: 0 0 12px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      display: flex;
+      align-items: center;
+  }
+
+  .sidebar .side-title i {
+      margin-right: 10px;
+      color: var(--blue);
+      font-size: 0.78em;
+  }
+
+  .sidebar .affiliations {
+      color: #475569;
+      font-size: 1.01em;
+      margin-bottom: 15px;
+      line-height: 1.55;
+      font-weight: 500;
+  }
+
+  .sidebar .title-status {
+      display: inline-block;
+      color: var(--navy);
+      background: #eaf1f8;
+      border: 1px solid #d8e4f0;
+      font-size: 0.79em;
+      margin-bottom: 26px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 700;
+  }
+
+  .sidebar ul {
+      list-style: none;
+      padding: 20px 0 0;
+      margin: 0;
+      border-top: 1px solid var(--soft-line);
+  }
+
+  .sidebar ul li {
+      margin-bottom: 11px;
+      font-size: 0.93em;
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.45;
+  }
+
+  .sidebar ul li i {
+      width: 22px;
+      margin-right: 10px;
+      color: #64748b;
+      text-align: center;
+      padding-top: 3px;
+      flex: 0 0 22px;
+  }
+
+  .sidebar ul li a {
+      color: #475569;
+      text-decoration: none;
+      word-break: break-word;
+  }
+
+  .sidebar ul li a:hover {
+      color: var(--blue);
+  }
+
+  /* 右侧内容区 */
+  .main-content {
+      flex: 1;
+      min-width: 0;
+  }
+
+  /* 首屏介绍 */
+  .intro-text {
+      position: relative;
+      overflow: hidden;
+      font-size: 1.08em;
+      color: var(--text);
+      margin-bottom: 38px;
+      padding: 34px 36px 30px;
+      border: 1px solid #dce6f0;
+      border-radius: 22px;
+      background:
+          linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(255, 255, 255, 0.98));
+      box-shadow: var(--shadow-md);
+      text-align: justify;
+  }
+
+  .intro-text::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--navy), var(--cyan));
+  }
+
+  .intro-text::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      right: -110px;
+      top: -135px;
+      background: rgba(37, 99, 166, 0.055);
+      pointer-events: none;
+  }
+
+  .hero-kicker {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 0.79em;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+  }
+
+  .hero-title {
+      position: relative;
+      z-index: 1;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+      color: var(--ink);
+      margin: 0 0 20px;
+      max-width: 900px;
+  }
+
+  .hero-title .accent {
+      color: var(--blue);
+  }
+
+  .intro-text p {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 15px;
+  }
+
+  .intro-text p:last-of-type {
+      margin-bottom: 22px;
+  }
+
+  .intro-text strong {
+      color: #132d4f;
+      font-weight: 700;
+  }
+
+  .research-chips {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+  }
+
+  .research-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      padding: 5px 11px;
+      color: #21486f;
+      background: #edf4fa;
+      border: 1px solid #d7e6f3;
+      border-radius: 999px;
+      font-size: 0.78em;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+  }
+/* 章节标题 */
+  .section-title {
+      position: relative;
+      font-size: 1.82em;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 13px;
+      margin: 64px 0 24px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      display: flex;
+      align-items: center;
+  }
+
+  .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 74px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--navy), var(--cyan));
+  }
+
+  .section-title i {
+      width: 38px;
+      height: 38px;
+      margin-right: 13px;
+      color: var(--blue);
+      background: #edf4fa;
+      border: 1px solid #dbe8f3;
+      border-radius: 10px;
+      font-size: 0.78em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .section-count {
+      margin-left: auto;
+      color: #64748b;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.43em;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+  }
+
+  .main-content h2 {
+      font-size: 1.28em;
+      color: #203247;
+      margin: 35px 0 16px;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      display: flex;
+      align-items: center;
+  }
+
+  .main-content h2::before {
+      content: "";
+      width: 4px;
+      height: 21px;
+      margin-right: 10px;
+      border-radius: 999px;
+      background: var(--blue);
+  }
+
+  /* 列表卡片 */
+  .main-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 38px;
+  }
+
+  .main-content ul li {
+      position: relative;
+      margin-bottom: 12px;
+      padding: 17px 19px 17px 44px;
+      line-height: 1.7;
+      font-size: 1.005em;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      box-shadow: 0 5px 15px rgba(15, 23, 42, 0.035);
+      transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+  }
+
+  .main-content ul li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 25px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 5px #edf4fa;
+  }
+
+  .main-content ul li:hover {
+      transform: translateY(-2px);
+      border-color: #cbd9e8;
+      box-shadow: 0 11px 25px rgba(15, 23, 42, 0.075);
+  }
+
+  .main-content ul li strong {
+      color: #102a49;
+      font-weight: 700;
+  }
+
+  /* 会议/期刊 */
+  .journal-name {
+      font-weight: 700;
+      color: #075985;
+      font-style: italic;
+  }
+
+  /* 徽章 */
+  .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.67em;
+      line-height: 1.55;
+      font-weight: 800;
+      color: #fff;
+      margin-left: 7px;
+      vertical-align: 0.1em;
+      text-transform: uppercase;
+      letter-spacing: 0.035em;
+      white-space: nowrap;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  }
+
+  .badge-sci { background: linear-gradient(135deg, #059669, #10b981); }
+  .badge-ccf { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }
+  .badge-ei { background: linear-gradient(135deg, #d97706, #f59e0b); }
+  .badge-gray { background: linear-gradient(135deg, #64748b, #94a3b8); }
+  .badge-purple { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+  .badge-success { background: linear-gradient(135deg, #047857, #059669); }
+  .badge-info { background: linear-gradient(135deg, #0284c7, #0ea5e9); }
+  .badge-hot { background: linear-gradient(135deg, #dc2626, #ef4444); }
+
+  /* 返回顶部 */
+  .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background: var(--navy);
+      border-radius: 50%;
+      box-shadow: var(--shadow-md);
+      z-index: 1000;
+      opacity: 0.92;
+  }
+
+  .back-to-top:hover {
+      color: #ffffff;
+      opacity: 1;
+      transform: translateY(-2px);
+  }
+
+  /* 响应式 */
+  @media (max-width: 1120px) {
+      .page-container {
+          gap: 42px;
+          padding-left: 28px;
+          padding-right: 28px;
+      }
+
+      .sidebar {
+          flex-basis: 270px;
+      }
 }
 
-*{box-sizing:border-box}
+  @media (max-width: 950px) {
+      .greedy-nav {
+          padding: 0 18px;
+          overflow-x: auto;
+      }
 
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:"Source Serif 4",Georgia,serif;
-    line-height:1.75;
-}
+      .greedy-nav .visible-links {
+          justify-content: flex-start;
+          min-width: max-content;
+      }
 
-h1,h2,h3,nav,.meta,.tag{
-    font-family:Inter,Arial,sans-serif;
-}
+      .page-container {
+          flex-direction: column;
+          padding: 34px 20px 60px;
+      }
 
-.navbar{
-    position:sticky;
-    top:0;
-    background:#fff;
-    border-bottom:1px solid var(--line);
-    z-index:20;
-}
+      .sidebar {
+          width: 100%;
+          position: static;
+          display: grid;
+          grid-template-columns: auto 1fr;
+          column-gap: 24px;
+          align-items: start;
+      }
 
-.nav-inner{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:flex-end;
-    gap:32px;
-    padding:16px 35px;
-}
+      .profile-pic {
+          grid-row: 1 / span 4;
+          width: 145px;
+          height: 145px;
+      }
 
-.nav-inner a{
-    text-decoration:none;
-    color:#334155;
-    font-weight:600;
-    font-size:14px;
-}
+      .sidebar ul {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 6px 20px;
+      }
 
-.layout{
-    max-width:1200px;
-    margin:55px auto;
-    padding:0 35px;
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:70px;
-}
+      .intro-text {
+          padding: 30px 28px 27px;
+      }
+  }
 
-.sidebar{
-    position:sticky;
-    top:100px;
-    height:max-content;
-}
+  @media (max-width: 650px) {
+      .sidebar {
+          display: block;
+      }
 
-.photo{
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    object-fit:cover;
-}
+      .sidebar ul {
+          display: block;
+      }
+.intro-text {
+          padding: 27px 22px 24px;
+          font-size: 1em;
+          text-align: left;
+      }
 
-.name{
-    font-size:34px;
-    font-weight:800;
-    color:#0f172a;
-    margin:20px 0 5px;
-}
+      .hero-title {
+          font-size: 2.05rem;
+      }
 
-.role{
-    font-family:Inter;
-    color:#475569;
-}
+      .section-title {
+          font-size: 1.52em;
+      }
 
-.links{
-    margin-top:25px;
-    font-family:Inter;
-    font-size:14px;
-}
+      .section-count {
+          display: none;
+      }
 
-.links a{
-    display:block;
-    margin:8px 0;
-    color:var(--blue);
-    text-decoration:none;
-}
+      .main-content ul li {
+          padding: 16px 16px 16px 39px;
+          font-size: 0.98em;
+      }
 
-.section{
-    margin-bottom:50px;
-}
+      .main-content ul li::before {
+          left: 17px;
+      }
+  }
 
-.section-title{
-    font-family:Inter;
-    font-size:30px;
-    color:#0f172a;
-    border-bottom:2px solid var(--line);
-    padding-bottom:8px;
-    margin-bottom:25px;
-}
+  @media print {
+      .masthead,
+      .back-to-top {
+          display: none;
+      }
 
-.intro{
-    font-size:18px;
-}
+      body {
+          background: #ffffff;
+      }
 
-.focus{
-    margin-top:30px;
-    padding:25px;
-    background:#f8fafc;
-    border-left:5px solid var(--navy);
-}
+      .page-container {
+          display: block;
+          max-width: none;
+          padding: 0;
+      }
 
-.focus h3{
-    margin-top:0;
-}
+      .sidebar {
+          position: static;
+          box-shadow: none;
+          margin-bottom: 24px;
+      }
 
-.keyword{
-    display:inline-block;
-    margin:5px;
-    padding:5px 12px;
-    border-radius:20px;
-    background:#e8eef6;
-    color:var(--navy);
-    font-family:Inter;
-    font-size:14px;
-}
-
-.pub{
-    margin:22px 0;
-}
-
-.pub-title{
-    font-weight:700;
-}
-
-.venue{
-    color:var(--blue);
-    font-style:italic;
-}
-
-.tag{
-    background:var(--navy);
-    color:white;
-    border-radius:4px;
-    padding:2px 8px;
-    font-size:12px;
-}
-
-.year{
-    color:#64748b;
-    font-family:Inter;
-    font-weight:700;
-}
-
-@media(max-width:900px){
-.layout{
-    display:block;
-}
-.sidebar{
-    position:static;
-    margin-bottom:40px;
-}
-.nav-inner{
-    justify-content:center;
-    flex-wrap:wrap;
-}
-}
+      .main-content ul li,
+      .intro-text {
+          box-shadow: none;
+          break-inside: avoid;
+      }
+  }
 </style>
 </head>
 
-<body>
+<body id="top">
+  <div class="masthead">
+    <nav class="greedy-nav" aria-label="Primary navigation">
+      <ul class="visible-links">
+        <li class="masthead__menu-item"><a href="#about-me">About Me</a></li>
+        <li class="masthead__menu-item"><a href="#publications">Publications</a></li>
+        <li class="masthead__menu-item"><a href="#patents">Patents</a></li>
+        <li class="masthead__menu-item"><a href="#awards">Awards</a></li>
+        <li class="masthead__menu-item"><a href="#service">Service</a></li>
+        <li class="masthead__menu-item"><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
 
-<div class="navbar">
-<div class="nav-inner">
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#publications">Publications</a>
-<a href="#projects">Projects</a>
-<a href="#service">Service</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
+  <div class="page-container">
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Portrait of Xiaokang Jin" class="profile-pic">
 
+      <h1 class="side-title">
+        <i class="fas fa-user-circle" aria-hidden="true"></i>
+        Xiaokang Jin
+      </h1>
 
-<div class="layout">
+      <div class="affiliations">
+        Zhejiang Normal University<br>
+        Jinhua Advanced Research Institute
+      </div>
 
-<aside class="sidebar">
+      <div class="title-status">PhD Student & Lecturer</div>
 
-<img class="photo" src="profile.jpg">
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i><span>Jinhua, China</span></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:xiaokangjin@zjnu.edu.cn">xiaokangjin@zjnu.edu.cn</a></li>
+        <li><i class="fas fa-envelope" style="visibility: hidden;"></i><a href="mailto:jxk726@163.com">jxk726@163.com</a></li>
+        <li><i class="ai ai-researchgate"></i><a href="https://www.researchgate.net/profile/Xiaokang-Jin-2" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+        <li><i class="ai ai-dblp"></i><a href="https://dblp.org/pid/212/2839.html" target="_blank" rel="noopener noreferrer">DBLP</a></li>
+        <li><i class="fab fa-github"></i><a href="https://github.com/shallcom" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><i class="ai ai-google-scholar"></i><a href="https://scholar.google.com/citations?user=4qHz88kAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><i class="ai ai-orcid"></i><a href="https://orcid.org/0000-0002-9563-8888" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+      </ul>
+    </aside>
 
-<div class="name">Xiaokang Jin</div>
+    <main class="main-content">
+      <section class="intro-text" id="about-me">
+        <div class="hero-kicker">Academic Homepage</div>
+        <h1 class="hero-title">
+          Research in <span class="accent">Computer Vision</span> and Multimodal AI
+        </h1>
 
-<div class="role">
-Ph.D. Student in Computer Science<br>
-Lecturer, Jinhua Advanced Research Institute
-</div>
+        <p>
+          I am currently pursuing my PhD degree in <strong>Computer Science and Technology</strong> at
+          <strong>Zhejiang Normal University</strong>, under the supervision of
+          <a href="https://scholar.google.com/citations?user=KO3MIkQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Prof. Jia Zhu</a>.
+          Previously, I obtained my B.S. and M.S. degrees in <strong>Computer Science and Technology</strong>
+          from <strong>Changsha University of Science and Technology</strong>, advised by
+          <a href="https://scholar.google.com/citations?user=bwrCnUUAAAAJ" target="_blank" rel="noopener noreferrer">Prof. Jianming Zhang</a>.
+        </p>
 
-<p>
-Zhejiang Normal University<br>
-Jinhua, China
-</p>
+        <p>
+          I also serve as a Lecturer at <strong>Jinhua Advanced Research Institute</strong>.
+          My research focuses on <strong>Computer Vision</strong> and <strong>Multimodal AI</strong>,
+          with particular emphasis on <strong>Educational Video Understanding, Retrieval-Augmented Generation (RAG),
+          Object Tracking</strong>, and <strong>Knowledge Graphs</strong>.
+        </p>
 
-<div class="links">
-<a href="#">Google Scholar</a>
-<a href="#">DBLP</a>
-<a href="https://github.com/shallcom">GitHub</a>
-<a href="#">ORCID</a>
-<a href="mailto:xiaokangjin@zjnu.edu.cn">Email</a>
-</div>
+        <div class="research-chips" aria-label="Research topics">
+          <span class="research-chip">Educational Video Understanding</span>
+          <span class="research-chip">Multimodal AI</span>
+          <span class="research-chip">Retrieval-Augmented Generation</span>
+          <span class="research-chip">Object Tracking</span>
+          <span class="research-chip">Knowledge Graphs</span>
+        </div>
+      </section>
+      <h1 class="section-title" id="publications">
+        <i class="fas fa-file-alt"></i>
+        Publications
+        <span class="section-count">4 conference · 14 journal</span>
+      </h1>
 
-</aside>
+      <h2>Conference Papers</h2>
+      <ul>
+        <li>Jingjiang Liu, Jia Zhu, Congcong Ke, <strong>Xiaokang Jin</strong>, Chen Fang, Ying Fang. Shidao: An Interactive Multimodal Platform for Lesson Preparation, Classroom Video Review, and Instructional Revision. <span class="journal-name">ACM MM</span>. 2026. <span class="badge badge-ccf">CCF A</span></li>
+        <li>Jingjiang Liu, Jia Zhu, <strong>Xiaokang Jin</strong>, Chen Fang, Jiawei Shen, Guoqing Ma, Yidan Liang. A Hierarchical Benchmark Dataset for Function-Aware Event Detection in Real Classroom Videos. <span class="journal-name">ACM MM</span>. 2026. <span class="badge badge-ccf">CCF A</span></li>
+        <li>Jingjiang Liu, Jia Zhu, Hanghui Guo, Weijie Shi, Yue Cui, <strong>Xiaokang Jin</strong>, Yilin Wang, Qingyu Niu, Jiawei Shen, Guoqing Ma, Yidan Liang, Shimin Di, Jiajie Xu. KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning. <span class="journal-name">ACL Main</span>. 2026. pages 9133–9160, San Diego, California, United States. <span class="badge badge-ccf">CCF A</span></li>
+        <li><strong>Xiaokang Jin</strong>, Jia Zhu, Jingjiang Liu, Yabing Shi, Jueqi Guan, Hao Chen, Pasquale De Meo. PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding. <span class="journal-name">ACL Findings</span>. 2026. pages 12621–12647, San Diego, California, United States. <span class="badge badge-ccf">CCF A</span></li>
+      </ul>
 
+      <h2>Journal Papers</h2>
+      <ul>
+        <li>Jianming Zhang, Jiangxing Dai, <strong>Xiaokang Jin*</strong>, Nai Ke. Learning Distortion-Aware Correlation Filters with Target Mask for UAV Tracking. <span class="journal-name">The European Journal on Artificial Intelligence</span>. 2026; 39(2): 504-521. <span class="badge badge-sci">SCI</span></li>
+        <li><strong>Xiaokang Jin</strong>, Benben Huang, Hao Sheng, Yao Wu. An anchor-free Siamese tracker with multi-attention and corner detection mechanism. <span class="journal-name">IEICE Transactions on Information and Systems</span>. 2025, E108.D(4), 349-359. <span class="badge badge-sci">SCI</span></li>
+        <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. An efficient deep learning framework for mixed-type wafer map defect pattern recognition. <span class="journal-name">AIP Advances</span>, 2024, 14(4). <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, Haitao Huang, <strong>Xiaokang Jin</strong>, et al. Siamese visual tracking based on criss-cross attention and improved head network. <span class="journal-name">Multimedia Tools and Applications</span>, 2024, 83(1): 1589-1615. <span class="badge badge-sci">SCI</span></li>
+        <li>Hao Sheng, Kun Cheng, <strong>Xiaokang Jin</strong>, et al. Attention-based encoder–decoder network for depth estimation from color-coded light fields. <span class="journal-name">AIP Advances</span>, 2023, 13(3). <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, Zi Ye, <strong>Xiaokang Jin</strong>, et al. Real-time traffic sign detection based on multiscale attention and spatial information aggregator. <span class="journal-name">Journal of Real-Time Image Processing</span>, 2022, vol. 19, no. 6, pp. 1155–1167. <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, Jin Wang, Arun Kumar Sangaiah. Spatial and semantic convolutional features for robust visual object tracking. <span class="journal-name">Multimedia Tools and Applications</span>, 2020, vol. 79, no. 21-22, pp. 15095-15115. <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Juan Sun, Jin Wang, Keqin Li. Dual model learning combined with multiple feature selection for accurate visual tracking. <span class="journal-name">IEEE Access</span>, 2019, vol. 7, pp. 43956-43969. <span class="badge badge-sci">SCI</span></li>
+        <li>张建明, <strong>金晓康</strong>, 吴宏林, 伍悠. 基于多模型的实时压缩跟踪算法. <span class="journal-name">电子与信息学报</span>, 2018, 40(10): 2373-2380. <span class="badge badge-ei">EI</span></li>
+        <li>Jianming Zhang, <strong>Xiaokang Jin</strong>, Yukai Liu, Arun Kumar Sangaiah, Wang Jin. Small sample face recognition algorithm based on novel Siamese network. <span class="journal-name">Journal of Information Processing Systems</span>, 2018, vol. 14, no. 6, pp. 1464-1479. <span class="badge badge-ei">EI</span></li>
+        <li>Jianming Zhang, You Wu, <strong>Xiaokang Jin</strong>, et al. A fast object tracker based on integrated multiple features and dynamic learning rate. <span class="journal-name">Mathematical Problems in Engineering</span>, 2018, Article ID 5986062. <span class="badge badge-sci">SCI</span></li>
+        <li>Jianming Zhang, Manting Huang, <strong>Xiaokang Jin</strong>, et al. A real-time Chinese traffic sign detection algorithm based on modified YOLOv2. <span class="journal-name">Algorithms</span>, 2017, 10(4), 127. <span class="badge badge-ei">EI</span></li>
+        <li>刘宇凯, <strong>金晓康</strong>, 张建明, 廖婷婷. 基于局部结构的多尺度协作表示人脸识别算法. <span class="journal-name">计算机工程与应用</span>. 2018, 54(17): 151-157. <span class="badge badge-purple">CSCD</span></li>
+        <li><strong>金晓康</strong>, 吴瑶, 施莹娟, 等. 基于YOLO框架的实时交通标志识别算法研究与系统实现. <span class="journal-name">软件</span>, 2023, 44(01): 20-23.</li>
+      </ul>
 
-<main>
+      <h1 class="section-title" id="patents">
+        <i class="fas fa-lightbulb"></i>
+        Patents & Copyrights
+        <span class="section-count">5 patents · 8 software copyrights</span>
+      </h1>
 
+      <h2>Patents</h2>
+      <ul>
+        <li><strong>金晓康</strong>, 姚泽瑾等. 一种目标跟踪方法、装置、设备及存储介质. 授权号：ZL202010481945.5. <span class="badge badge-success">已授权</span></li>
+        <li>董长春, 曹楠, 韩煜, <strong>金晓康</strong>. 一种用于光电雪崩二极管C-V曲线的测量装置及测量方法. 公开号：CN113589129B. <span class="badge badge-success">已授权</span></li>
+        <li>张建明, <strong>金晓康</strong>, 李旭东, 陆朝铨. 一种基于多级特征的双学习模型目标跟踪方法. 授权号: ZL201811405327.1. <span class="badge badge-success">已授权</span></li>
+        <li><strong>金晓康</strong>. 一种基于注意力机制和角点检测的高效孪生跟踪方法. 申请号: 202311470810.9. <span class="badge badge-gray">等待实审</span></li>
+        <li><strong>金晓康</strong>. 一种基于多线程并行的GPU快速目标跟踪方法. 申请号：202310510664.1. <span class="badge badge-gray">等待实审</span></li>
+      </ul>
 
-<section class="section" id="about">
+      <h2>Software Copyrights</h2>
+      <ul>
+        <li><strong>金晓康</strong>. 工业设备缺陷多模态检测系统. 登记号: 2025SR0954414.</li>
+        <li><strong>金晓康</strong>. 网络安全运行管理系统. 登记号: 2024SR2039707.</li>
+        <li><strong>金晓康</strong>. 动态目标实时跟踪系统. 登记号: 2023SR0363765.</li>
+        <li>姚怡雪, <strong>金晓康</strong>. 机器人机械臂轨迹定位跟踪系统. 登记号: 2023SR1773356.</li>
+        <li>姚怡雪, <strong>金晓康</strong>. 基于视觉的机械臂运动物体识别抓取系统V1.0. 登记号: 2023SR1774295.</li>
+        <li><strong>金晓康</strong>. 面向目标跟踪系统的测试工具软件V1.0. 登记号: 22021SR1855455.</li>
+        <li><strong>金晓康</strong>, 张建明. 基于相关滤波的多姿态行人跟踪系统V1.0. 登记号: 2018SR619809.</li>
+        <li><strong>金晓康</strong>, 张建明. 基于WEB前端的旅游系统V1.0. 登记号: 2018SR618438.</li>
+      </ul>
 
-<h2 class="section-title">About Me</h2>
+      <h1 class="section-title" id="awards">
+        <i class="fas fa-award"></i>
+        Honors & Awards
+        <span class="section-count">11 honors</span>
+      </h1>
 
-<div class="intro">
+      <ul>
+        <li>硕士研究生国家奖学金. <span class="badge badge-success">教育部</span>, 2018.</li>
+        <li>湖南省优秀硕士学位论文 (复杂场景下鲁棒的单目标跟踪算法研究). <span class="badge badge-success">湖南省政府</span>, 2021.</li>
+        <li>校级优秀毕业设计（论文）. <span class="badge badge-gray">长沙理工大学</span>, 2016.</li>
+        <li>第九届全国计算机类课程实验教学案例评选. <span class="badge badge-hot">一等奖</span>, 2024.11.</li>
+        <li>第七届开源设计大赛-开源案例大赛 (CCF). <span class="badge badge-hot">二等奖</span>, 2024.11.</li>
+        <li>第六届开源设计大赛-开源案例大赛 (CCF). <span class="badge badge-hot">二等奖</span>, 2023.10.</li>
+        <li>第四届高校教师教学创新大赛. <span class="badge badge-hot">二等奖</span>, 2024.05.</li>
+        <li>第五届教学成果奖. <span class="badge badge-hot">二等奖</span>, 2024.03.</li>
+        <li>湖南省第十一届研究生创新论坛分论坛. <span class="badge badge-hot">一等奖</span>, 2018.11.</li>
+        <li>“华为杯”湖南省大学生计算机作品赛. <span class="badge badge-hot">一等奖</span>, 2015.</li>
+        <li>金华市2024年度教育科研优秀成果. <span class="badge badge-hot">二等奖</span>, 2025.01.</li>
+      </ul>
 
-<p>
-I am a Ph.D. student in Computer Science and Technology at
-<strong>Zhejiang Normal University</strong>, supervised by
-<strong>Prof. Jia Zhu</strong>. I am also a Lecturer at
-<strong>Jinhua Advanced Research Institute</strong>.
-Previously, I received my B.S. and M.S. degrees in Computer Science and Technology
-from Changsha University of Science and Technology, supervised by
-<strong>Prof. Jianming Zhang</strong>.
-</p>
+      <h1 class="section-title" id="service">
+        <i class="fas fa-user-edit"></i>
+        Professional Service
+      </h1>
 
-<p>
-My research lies at the intersection of
-<strong>Computer Vision</strong> and
-<strong>Multimodal Artificial Intelligence</strong>.
-I develop methods, benchmarks, and systems that enable machines to understand,
-organize, and reason over complex visual and instructional environments.
-</p>
+      <ul>
+        <li><strong>Reviewer for Conferences:</strong> <span class="journal-name">ACM MM</span>, <span class="journal-name">NeurIPS</span>, etc.</li>
+        <li><strong>Reviewer for Journals:</strong> <span class="journal-name">Expert Systems With Applications</span>, <span class="journal-name">Scientific Reports</span>, <span class="journal-name">Discover Computing</span>, <span class="journal-name">Multimedia Systems</span>, <span class="journal-name">Signal, Image and Video Processing</span>, <span class="journal-name">Discover Artificial Intelligence</span>, <span class="journal-name">Cluster Computing</span>, <span class="journal-name">The Visual Computer</span>, <span class="journal-name">Pattern Analysis and Applications</span>, <span class="journal-name">Journal of Real-Time Image Processing</span>, <span class="journal-name">Discover Internet of Things</span>, <span class="journal-name">IEEE Access</span>, <span class="journal-name">Quality and Reliability Engineering International</span>, etc.</li>
+      </ul>
 
-</div>
+      <h1 class="section-title" id="projects">
+        <i class="fas fa-tasks"></i>
+        Projects
+        <span class="section-count">10 research · 5 teaching reform</span>
+      </h1>
 
-</section>
+      <h2>Research Projects</h2>
+      <ul>
+        <li>跨领域多模态数据融合驱动下的多智能体智能决策服务研发及示范应用. 浙江省尖兵领雁项目. <span class="badge badge-info">参与/在研</span></li>
+        <li>智能视频监控系统中的目标跟踪技术研究. 金华市公益性技术项目. <span class="badge badge-success">主持/结题</span></li>
+        <li>基于深度网络和相关滤波的视觉跟踪方法研究. 院设高层次培育项目. <span class="badge badge-success">主持/结题</span></li>
+        <li>视觉跟踪中目标深度表观模型的学习与更新方法研究. 国家自然科学基金面上项目 (61972056). <span class="badge badge-success">参与/结题</span></li>
+        <li>基于深度学习和稀疏表达的交通标志图像检测与分类算法研究. 湖南省教育厅科研重点项目. <span class="badge badge-success">参与/结题</span></li>
+        <li>基于树莓派开源硬件平台与无线网络的嵌入式智能视频监控系统. 湖南省大创项目. <span class="badge badge-success">参与/结题</span></li>
+        <li>基于深度卷积神经网络的交通标志识别技术研究. 湖南省研究生科研创新项目. <span class="badge badge-success">参与/结题</span></li>
+        <li>基于相关滤波和深度学习的单目标跟踪技术研究. 湖南省研究生科研创新项目. <span class="badge badge-success">参与/结题</span></li>
+        <li>基于多核相关滤波器的判别可靠性学习跟踪研究. 湖南省研究生科研创新项目. <span class="badge badge-success">参与/结题</span></li>
+        <li>云计算和大数据教育软件咨询服务. 广东轩辕网络科技技术服务. <span class="badge badge-success">参与/结题</span></li>
+      </ul>
 
+      <h2>Teaching Reform Projects</h2>
+      <ul>
+        <li>“五个贯穿”在JavaWeb程序设计中的应用研究. 金华高研院重点课题. <span class="badge badge-info">主持/在研</span></li>
+        <li>网络空间安全靶场中的教学实训平台研究. 金华高研院专项课题. <span class="badge badge-info">主持/在研</span></li>
+        <li>Java Web课程的在线实践智慧测评系统的构建与实施. 金华市教育科学规划研究课题. <span class="badge badge-success">主持/结题</span></li>
+        <li>基于产教融合的网络空间安全靶场建设的研究. 金华市教育科学规划研究课题. <span class="badge badge-success">主持/结题</span></li>
+        <li>基于产教融合的智慧就业指导体系建设的研究. 金华市教育科学规划研究课题. <span class="badge badge-success">执笔/结题</span></li>
+      </ul>
+    </main>
+  </div>
 
-<section class="section" id="research">
-
-<h2 class="section-title">Research Focus</h2>
-
-<div class="focus">
-
-<h3>Multimodal Intelligence for Understanding and Reasoning</h3>
-
-<p>
-My current research explores multimodal foundation models,
-video understanding, and knowledge-centric reasoning,
-with the goal of building intelligent systems that transform
-visual experiences into structured knowledge and actionable insights.
-</p>
-
-<span class="keyword">Multimodal Foundation Models</span>
-<span class="keyword">Educational Video Understanding</span>
-<span class="keyword">Vision-Language Learning</span>
-<span class="keyword">Knowledge-Centric Reasoning</span>
-<span class="keyword">Intelligent Video Analysis</span>
-
-</div>
-
-</section>
-
-
-<section class="section" id="publications">
-
-<h2 class="section-title">Selected Publications</h2>
-
-<div class="pub">
-<span class="year">2026</span><br>
-<span class="pub-title">
-PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding.
-</span><br>
-<span class="venue">ACL Findings</span>
-<span class="tag">CCF A</span>
-</div>
-
-<div class="pub">
-<span class="year">2026</span><br>
-<span class="pub-title">
-KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning.
-</span><br>
-<span class="venue">ACL Main</span>
-<span class="tag">CCF A</span>
-</div>
-
-<div class="pub">
-<span class="year">2026</span><br>
-<span class="pub-title">
-Shidao: An Interactive Multimodal Platform for Lesson Preparation, Classroom Video Review, and Instructional Revision.
-</span><br>
-<span class="venue">ACM MM</span>
-<span class="tag">CCF A</span>
-</div>
-
-<div class="pub">
-<span class="year">2025</span><br>
-<span class="pub-title">
-An anchor-free Siamese tracker with multi-attention and corner detection mechanism.
-</span><br>
-<span class="venue">IEICE Transactions on Information and Systems</span>
-</div>
-
-</section>
-
-
-<section class="section" id="projects">
-
-<h2 class="section-title">Research Projects</h2>
-
-<ul>
-<li>Multimodal foundation models for educational intelligence.</li>
-<li>Knowledge-centric video reasoning and retrieval.</li>
-<li>Intelligent visual understanding and analysis systems.</li>
-</ul>
-
-</section>
-
-
-<section class="section" id="service">
-
-<h2 class="section-title">Academic Service</h2>
-
-<p>
-Reviewer for international conferences and journals, including ACM MM,
-NeurIPS and related multimedia and artificial intelligence venues.
-</p>
-
-</section>
-
-
-<section class="section" id="contact">
-
-<h2 class="section-title">Collaboration & Contact</h2>
-
-<p>
-I am interested in academic collaborations in multimodal AI,
-video understanding, educational intelligence, and knowledge representation.
-</p>
-
-<p>
-Email: xiaokangjin@zjnu.edu.cn
-</p>
-
-</section>
-
-
-</main>
-</div>
-
+  <a class="back-to-top" href="#top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 </body>
 </html>
